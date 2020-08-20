@@ -26,7 +26,7 @@
                     <li>Hottline</li>
                     <li><i class="far fa-comments"></i></li>
                     <li><i class="far fa-bell"></i></li>
-                    <li><i class="far fa-user"></i></li>
+                    <li id="clickLogin"><i class="far fa-user"></i></li>
                 </ul>
             </div>
         </header>
@@ -44,8 +44,17 @@
     </div>
 
 
-
-    <script src="../js/compoment.js"></script>
+    <script>
+        const clickLogin = document.getElementById('clickLogin')
+        clickLogin.addEventListener('click',() => {
+            document.getElementById('login').style = 'display:block'
+        })
+        const close = document.getElementById('close')
+        close.addEventListener('click',() => {
+            document.getElementById('login').style = 'display:none'
+        })
+    </script>
+    <script src="../js/component.js"></script>
     <script src="../js/controller.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/model.js"></script>
