@@ -12,11 +12,21 @@ header{
 }
 .header-container{
     display: flex;
-    width: 1170px;
+    /* width: 1170px; */
     margin: auto;    
     /* text-align: center; */
     
 }
+
+@media only screen and (min-width:1024px){
+    .header-container{
+        width: 1024px;
+    }
+}
+/* @media only screen and (max-width:1023px){
+
+} */
+
 .header-container >div {
     margin-left: 10px;
 }
@@ -39,56 +49,7 @@ header{
     width: 150px;
     justify-content: space-between;
 }
-/* vào phần thân  */
-.tour-container .tour-img{
-    /* text-align: center; */
-    background-image: url("../img/div-tour.jpg");
-    height: 300px;      
-    color: #ffffff; 
-    align-items: center;
-    position: relative;
-}
-.tour-container .tour-img .aside-mid{
-    height: 150px;
-    width: 46,66%;
-    background-color:rgba(17, 207, 191, 0.7);
-    position: absolute;
-    border-radius: 10px;
-    top: 70px;
-    left: 25%;
-    right: 25%;
-    padding-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.tour-container .tour-img .aside-mid #tour-search input{
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 30px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-.btn{  
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: all 4s;
-    width: fit-content;
-}
-.cursor{
-    cursor: pointer;
-}
-#tour-search #tour-search-submit{
-    text-align: center;
-    
-}
-#tour-search-submit button{
-    width: 40%;
-    height: 30px;
-    text-transform: uppercase;
-    background-color: rgb(247, 243, 12);
-}
+
 
 /* Login */
 .modal {

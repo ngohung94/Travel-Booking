@@ -1,3 +1,73 @@
+
+
+/* vào phần thân  */
+.tour-container .tour-img{
+    /* text-align: center; */
+    background-image: url("../img/div-tour.jpg");
+    height: 300px;      
+    color: #ffffff; 
+    align-items: center;
+    position: relative;
+}
+.tour-container .tour-img .aside-mid{
+    height: 150px;
+    width: 46,66%;
+    background-color:rgba(21, 130, 219, 0.7);
+    position: absolute;
+    border-radius: 10px;
+    top: 70px;
+    left: 25%;
+    right: 25%;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+.tour-container .tour-img .aside-mid #tour-search input{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.btn{  
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: all 4s;
+    width: fit-content;
+}
+.cursor{
+    cursor: pointer;
+}
+#tour-search-submit{
+    display: flex;
+    justify-content: center;
+    
+}
+#tour-search-submit button{
+    width: 40%;
+    height: 30px;
+    text-transform: uppercase;
+    background-color: rgb(247, 243, 12);
+}
+/* phần footer */
+footer{
+    width: 100%;
+    /* text-align: center; */
+}
+footer .footer-container .tour-country{
+    margin-bottom: 10px;
+    color: #443d3d;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+
+
+
+/* use for PC  */
 @media only screen and (min-width: 1024px ){
     .aside-mid{
         width: 748px;
@@ -5,17 +75,23 @@
     #tour-search-content{
         font-size: 30px;
     }
+    footer{
+        display: flex;
+        justify-content: center;
+    }
+    footer .footer-container{
+        width: 1024px;
+    }
 
 }
-/* @media only screen and(max-width:1023px ){
+/* @media only screen and(max-width:1023px ) and (min-width:740px){
     
 } */
-/* @media only screen and(max-width:320px ){
-    #tour-search-content{
+@media only screen and( max-width: 739px ){
+    /* #tour-search-content{
         font-size: 5px;
-    }
-   button{
+    } */
+    #tour-search-submit button{
       font-size: 10px;
-      background-color: yellow;
     }
-} */
+}

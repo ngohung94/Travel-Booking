@@ -14,4 +14,4 @@ const init = () => {
     view.setActiveScreen('homePageScreen')
 
 } 
-window.onload = init 
+window.onload = init;
