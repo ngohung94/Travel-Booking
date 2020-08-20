@@ -1,0 +1,21 @@
+@media only screen and (min-width: 1024px ){
+    .aside-mid{
+        width: 748px;
+    }
+    #tour-search-content{
+        font-size: 30px;
+    }
+
+}
+/* @media only screen and(max-width:1023px ){
+    
+} */
+/* @media only screen and(max-width:320px ){
+    #tour-search-content{
+        font-size: 5px;
+    }
+   button{
+      font-size: 10px;
+      background-color: yellow;
+    }
+} */
