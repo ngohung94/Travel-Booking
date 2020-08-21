@@ -6,14 +6,57 @@ view.setActiveScreen = (screenName) => {
         document.getElementById('app').innerHTML = components.homePageScreen
         
         // Login
-        const clickLogin = document.getElementById('clickLogin')
-        clickLogin.addEventListener('click',() => {
-            document.getElementById('login').style = 'display:block'
+        const loginForm = document.getElementById('login-form')
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            loginForm.email.value = loginForm.email.value.trim()
+            const dataLogin = {
+                email: loginForm.email.value,
+                password: loginForm.password.value
+        }
+            controller.login(dataLogin)
         })
-        const close = document.getElementById('close')
-        close.addEventListener('click',() => {
-            document.getElementById('login').style = 'display:none'
+        // sang man register
+        const clickRegister = document.getElementById('clickRegister')
+        clickRegister.addEventListener('click',() => {
+            view.setActiveScreen('registerScreen')
+        })
+        const clickToRegister = document.getElementById('redirect-to-register')
+        clickToRegister.addEventListener('click',() => {
+            view.setActiveScreen('registerScreen')
+        })
+        
+        break;
+        case 'registerScreen' :
+        document.getElementById('app').innerHTML = components.registerScreen
+        const registerForm = document.getElementById('register-form')
+        registerForm.addEventListener('submit', (event) => {
+            event.preventDefault()
+        const dataRegister = {
+            firstName: registerForm.firstName.value,
+            lastName: registerForm.lastName.value,
+            email: registerForm.email.value,
+            password: registerForm.password.value,
+            confirmPassword: registerForm.confirmPassword.value
+        }
+        controller.register(dataRegister)
+        })
+        const backToHomePage = document.getElementById('logo')
+        backToHomePage.addEventListener('click',() => {
+            view.setActiveScreen('homePageScreen')
         })
         break;
     }
+    const clickLogin = document.getElementById('clickLogin')
+    clickLogin.addEventListener('click',() => {
+        document.getElementById('login').style = 'display:block'
+    })
+    const closeLogin = document.getElementById('closeLogin')
+    closeLogin.addEventListener('click',() => {
+        document.getElementById('login').style = 'display:none'
+    })
+}
+
+view.setErrorMessage = (elementId, message) => {
+    document.getElementById(elementId).innerText = message
 }

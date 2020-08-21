@@ -1,0 +1,19 @@
+.registerForm {
+    background-color: #fff;
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid #dbdbdb;
+}
+.register-header {
+    margin-top:10px;
+    color: #037BFE ;
+    text-align: center;
+}
+#register-form {
+    padding: 20px;
+}
+.btn-register {
+    width: 80%;
+    margin: auto;
+}
