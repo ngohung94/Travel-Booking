@@ -1,6 +1,10 @@
 
 
 /* vào phần thân  */
+a{
+    color: #00adef;
+    text-decoration: none;
+}
 .tour-container .tour-img{
     /* text-align: center; */
     background-image: url("../img/div-tour.jpg");
@@ -49,8 +53,11 @@
 #tour-search-submit button{
     width: 40%;
     height: 30px;
+    line-height: 15px;
     text-transform: uppercase;
     background-color: rgb(247, 243, 12);
+    color: black;
+
 }
 /* phần footer */
 footer{
@@ -62,13 +69,54 @@ footer .footer-container .tour-country{
     color: #443d3d;
     text-transform: uppercase;
     margin-top: 15px;
+    clear: both;
+}
+.footer-container .body-thumbnails{
+    font-size: 13px;
+}
+.body-thumbnails .eight-thumbnails{
+    clear: both;
+    padding: 0px;
+    
+}
+.eight-thumbnails .item-thumbnail{
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.eight-thumbnails .box-thumbnails{
+    float: left;
+    margin: 5px;
+    
+}
+
+.eight-thumbnails .item-thumbnail a{
+    position: relative;
+}
+.eight-thumbnails .item-thumbnail .item-name{
+    font-size: 16px;
+    margin: 0px;
+    color: #ffffff;
+    left: 0;
+    bottom: 4px;
+    position: absolute;
+    padding: 7px;
+    width: 100%;
+    font-weight: 700px;
+    text-align: center;
+    background: rgba(0,174,239,.7);
+    border-top: 1px solid rgba(111,204,237,.7);
 }
 
 
 
 
+
+
 /* use for PC  */
-@media only screen and (min-width: 1024px ){
+@media only screen and (min-width: 1324px  ){
     .aside-mid{
         width: 748px;
     }
@@ -80,18 +128,20 @@ footer .footer-container .tour-country{
         justify-content: center;
     }
     footer .footer-container{
-        width: 1024px;
+        width: 1200px;
     }
 
 }
 /* @media only screen and(max-width:1023px ) and (min-width:740px){
     
 } */
-@media only screen and( max-width: 739px ){
-    /* #tour-search-content{
+@media only screen and (max-width: 739px ){
+    #tour-search-content{
         font-size: 5px;
-    } */
+    }
     #tour-search-submit button{
       font-size: 10px;
+      line-height: 10px;
+      font-weight: 900;
     }
 }
