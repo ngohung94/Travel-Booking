@@ -1,37 +1,36 @@
 const controller = {}
-controller.register = (dataRegister) => {
-    if (dataRegister.firstName.trim() === ''){
-        view.setErrorMessage('first-name-error', 'Please input first name')
+controller.register = (data) => {
+    if (data.firstName.trim() === ''){
+      view.setErrorMessage('first-name-error', 'Please input first name')
     }else {
-        view.setErrorMessage('first-name-error', '')
+      view.setErrorMessage('first-name-error', '')
     }
-    if (dataRegister.lastName.trim() === ''){
-        view.setErrorMessage('last-name-error' , 'Please input last name')
+    if (data.lastName.trim() === ''){
+      view.setErrorMessage('last-name-error' , 'Please input last name')
     }else {
-        view.setErrorMessage('last-name-error', '')
+      view.setErrorMessage('last-name-error', '')
     }
-    if (dataRegister.email.trim() === ''){
-        view.setErrorMessage('email-error' , 'Please input email')
+    if (data.email.trim() === ''){
+      view.setErrorMessage('email-error' , 'Please input email')
     }else {
-        view.setErrorMessage('email-error', '')
+      view.setErrorMessage('email-error', '')
     }
-    if (dataRegister.password.trim() === ''){
-        view.setErrorMessage('password-error' , 'Please input password')
+    if (data.password.trim() === ''){
+      view.setErrorMessage('password-error' , 'Please input password')
     }else {
-        view.setErrorMessage('password-error', '')
+      view.setErrorMessage('password-error', '')
     }
-    if (dataRegister.confirmPassword.trim() === ''){
-        view.setErrorMessage('confirm-password-error' , 'Please input confirm password')
-    }else if ( dataRegister.password !== dataRegister.confirmPassword ){
-        view.setErrorMessage('confirm-password-error' , `Password didn't match`)
+    if (data.confirmPassword.trim() === ''){
+      view.setErrorMessage('confirm-password-error' , 'Please input confirm password')
+    }else if ( data.password !== data.confirmPassword ){
+      view.setErrorMessage('confirm-password-error' , `Password didn't match`)
     }else{
-        view.setErrorMessage('confirm-password-error' , '')
+      view.setErrorMessage('confirm-password-error' , '')
     }
-
-    if(dataRegister.firstName.trim() !== '' && dataRegister.lastName.trim() !== '' && dataRegister.email.trim() !== '' && dataRegister.password.trim() !== '' && dataRegister.confirmPassword.trim() !== '' && dataRegister.password.trim() === dataRegister.confirmPassword.trim()){
-        model.register(dataRegister)
+    if(data.firstName.trim() !== '' && data.lastName.trim() !== '' && data.email.trim() !== '' && data.password.trim() !== '' && data.confirmPassword.trim() !== '' && data.password.trim() === data.confirmPassword.trim()){
+      model.register(data)
     }
-}
+  }
 controller.login = (dataLogin) =>{
     if (dataLogin.email.trim() === ''){
         view.setErrorMessage('email-error' , 'Please input email')

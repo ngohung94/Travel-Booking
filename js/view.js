@@ -32,14 +32,14 @@ view.setActiveScreen = (screenName) => {
         const registerForm = document.getElementById('register-form')
         registerForm.addEventListener('submit', (event) => {
             event.preventDefault()
-        const dataRegister = {
-            firstName: registerForm.firstName.value,
-            lastName: registerForm.lastName.value,
-            email: registerForm.email.value,
-            password: registerForm.password.value,
-            confirmPassword: registerForm.confirmPassword.value
-        }
-        controller.register(dataRegister)
+            const dataRegister = {
+                firstName: registerForm.firstName.value,
+                lastName: registerForm.lastName.value,
+                email: registerForm.email.value,
+                password: registerForm.password.value,
+                confirmPassword: registerForm.confirmPassword.value
+            }
+            controller.register(dataRegister)
         })
         const backToHomePage = document.getElementById('logo')
         backToHomePage.addEventListener('click',() => {
@@ -59,4 +59,18 @@ view.setActiveScreen = (screenName) => {
 
 view.setErrorMessage = (elementId, message) => {
     document.getElementById(elementId).innerText = message
+}
+view.addLogOut = () => {
+    const logOut = document.createElement('li')
+    logOut.id = "logOut"
+    logOut.innerText = `Log Out`
+    document.querySelector('.drop-downs-login').appendChild(logOut)
+    document.getElementById("logOut").addEventListener("click", (e) => {
+                e.preventDefault()  
+                firebase.auth().signOut().then(() => {
+                alert("Sign-out successful.")
+                })
+            })
+    document.getElementById('clickLogin').style = "display : none"
+    document.getElementById('clickRegister').style = "display : none"
 }
