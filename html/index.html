@@ -2,26 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Booking</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tour.css">
-    <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking</title>
+  <link rel="stylesheet" href="../css/hotel.css">
+  <link rel="stylesheet" href="../css/inner-hotel.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/tour.css">
+  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="../js/datedropper.pro.min.js"></script>
 </head>
 
 <body>
-    <div id="app"></div>
+  <div id="app"></div>
+  <input id="date-input1" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
+    data-dd-theme="leaf" placeholder="Chọn ngày đi" />
 
-    <script src="../js/component.js"></script>
-    <script src="../js/controller.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="../js/model.js"></script>
-    <script src="../js/view.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+  <script src="../js/component.js"></script>
+  <script src="../js/controller.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/model.js"></script>
+  <script src="../js/view.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+  <!-- datedropper init -->
+  <script>
+    $('#date-input1').dateDropper();
+    $('#date-input2').dateDropper();
+  </script>
+
 </body>
+
 </html>
