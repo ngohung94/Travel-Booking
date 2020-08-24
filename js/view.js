@@ -148,10 +148,7 @@ view.setActiveScreen = (screenName) => {
         }
         controller.register(dataRegister)
       })
-      const backToHomePage = document.getElementById('logo')
-      backToHomePage.addEventListener('click', () => {
-        view.setActiveScreen('tourPage')
-      })
+      
       break;
   }
   

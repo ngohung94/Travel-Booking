@@ -4,7 +4,7 @@ components.tourPage =
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div class="logo-container">
+            <div class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
@@ -225,8 +225,6 @@ components.tourPage =
 </footer>
 </div>
 
-
-
 <div id="login" class="modal">
 <div class="modal-content">
     <div id="loginModal">
@@ -266,8 +264,8 @@ components.registerScreen =
 <div class="header header-sticky">
   <div class="container-wrapper">
       <div class="header-bottom">
-          <div class="logo-container">
-              <div class="logo">
+          <div class="logo-container cursor" onClick="view.setActiveScreen('hotelPage')">
+              <div >
                   <img src="../img/img-hotel/logo.png">
               </div>
           </div>
@@ -284,7 +282,7 @@ components.registerScreen =
                 <div class="drop-downs-login">
                     <ul >
                         <li id="clickLogin">Login</li>
-                        <li onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        <li>Register</li>
                     </ul>
                 </div>
                 <span><a>Login</a></span>
@@ -394,22 +392,22 @@ components.hotelPage = `
             </form>
           </div>
           <div class='social'>
-            <div class='social-fb icon-primary'>
+            <div class='social-fb icon-primary cursor'>
               <i class="fa fa-facebook-official" aria-hidden="true"></i>
             </div>
-            <div class='social-ins icon-primary'>
+            <div class='social-ins icon-primary cursor'>
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </div>
-            <div class='social-tw icon-primary'>
+            <div class='social-tw icon-primary cursor'>
               <i class="fa fa-twitter"></i>
             </div>
-            <div class='social-yt icon-primary'>
+            <div class='social-yt icon-primary cursor'>
               <i class="fa fa-youtube-play" aria-hidden="true"></i>
             </div>
           </div>
         </div>
         <div class="header-bottom">
-          <div class="logo-container"onClick="view.setActiveScreen('hotelPage')">
+          <div class="logo-container cursor"onClick="view.setActiveScreen('hotelPage')">
             <div class="logo" >
               <img src="../img/img-hotel/logo.png">
             </div>
