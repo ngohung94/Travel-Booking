@@ -1,0 +1,229 @@
+.header-sticky {
+  background-color: #0c5561;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.header-sticky .header-bottom {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.header-sticky .header-bottom .logo-login {
+  color: #fff;
+}
+
+.header-sticky .header-bottom-bottom .icon-primary {
+  color: #fff;
+}
+
+.header-sticky .header-bottom-bottom {
+  padding: 15px 0 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.header-bottom-bottom .form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bottom-bottom .form-wrapper input {
+  margin-left: 10px;
+}
+
+.header-bottom-bottom .form-wrapper .btn-wrapper .btn-primary {
+  color: #0c5561;
+  background-color: #fff;
+}
+
+/*-----------------Main Content Hotel-----------------*/
+.main-content-hotel {
+  padding: 30px 0;
+}
+
+.main-content-hotel .category-hotel {
+  display: flex;
+}
+
+.left-main-content-hotel {
+  max-width: 30rem;
+  min-width: 25rem;
+  margin-right: 1rem;
+  background-color: #0c5561;
+  padding: 10px;
+  height: max-content;
+  color: #fff;
+}
+
+.left-main-content-hotel h3.title {
+  color: #fff;
+  margin: 10px 0;
+}
+
+.right-main-content-hotel {
+  flex-grow: 1;
+  border-top: 1px solid #dbdbdb;
+  /* border-bottom: 1px solid #dbdbdb; */
+}
+
+.category-hotel .filter-hotel {
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+}
+
+.category-hotel .filter-hotel .input-wrapper input {
+  width: 100%;
+} 
+
+.category-hotel .filter-rating .checkbox-wrapper input {
+  margin-right: 10px;
+}
+
+.category-hotel .filter-rating .checkbox-wrapper span {
+  margin: 2px;
+}
+
+.category-hotel .filter-rating .checkbox-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #e7e709;
+  font-size: 1.7rem;
+}
+
+.category-hotel .filter-price ul {
+  list-style-type: none;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.category-hotel .filter-price ul li{
+  background-color: #4bbfd3;
+  margin: 10px 0;
+  width: max-content;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.right-main-content-hotel .one-hotel {
+  position: relative;
+  padding: 15px 0 30px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.right-main-content-hotel {
+  padding: 20px;
+}
+
+.right-main-content-hotel h2.title-hotel {
+  color: #0c5561  ;
+}
+
+.right-main-content-hotel h2.title-hotel span {
+  color: #e7e709;
+  margin: 0 2px;
+}
+
+.right-main-content-hotel .location {
+  display: flex;
+  font-size: 1.4rem;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.right-main-content-hotel .location span {
+  margin: 0 5px;
+}
+
+.right-main-content-hotel .location span:last-child {
+  color: #0c5561;
+  font-size: 1.3rem;
+}
+
+.right-main-content-hotel .info-hotel {
+  display: flex;
+}
+
+
+.right-main-content-hotel .info-hotel .img-hotel {
+  max-width: 250px;
+  max-height: 164px;
+  margin-right: 10px;
+  width: 654px;
+}
+
+.right-main-content-hotel .info-hotel .img-hotel img{
+  height: 100%;
+  width: 100%;
+}
+
+.right-main-content-hotel .info-hotel .info-extra-hotel {
+  margin-right: 15rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.right-main-content-hotel .info-hotel .info-extra-hotel p {
+  font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.right-main-content-hotel .info-hotel .info-extra-hotel p span {
+  color: #0c5561;
+    font-size: 1.5rem;
+}
+
+.right-main-content-hotel .info-extra-hotel .guarantee i {
+  color: rgb(0 203 135);
+  font-size: 1.2rem;
+}
+
+.right-main-content-hotel .price {
+  justify-self: flex-end;
+}
+
+.right-main-content-hotel .discount {
+  background-color: red;
+  color: #fff;
+  border-radius: 4px;
+  width: max-content;
+  padding: 8px 10px;
+}
+
+.right-main-content-hotel .price .price-old {
+  font-size: 1.3rem;
+}
+
+.right-main-content-hotel .price .price-new {
+  font-size: 2rem;
+  color: green;
+}
+
+.right-main-content-hotel .btn-view-room {
+  background-color: yellow;
+  width: max-content;
+  color: #000;
+  font-weight: 500;
+}
+
+.right-main-content-hotel .info-hot {
+  position: absolute;
+  top: 0;
+  bottom: 2rem;
+  right: -1rem;
+  background: whitesmoke;
+  padding: 0 15px;
+}
+
+.right-main-content-hotel .info-hot > div {
+  margin: 30px 0;
+}
+/*-----------------Main Content Hotel-----------------*/

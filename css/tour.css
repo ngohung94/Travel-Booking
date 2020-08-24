@@ -1,10 +1,7 @@
 
 
 /* vào phần thân  */
-a{
-    color: #00adef;
-    text-decoration: none;
-}
+
 .tour-container .tour-img{
     /* text-align: center; */
     background-image: url("../img/div-tour.jpg");
@@ -35,13 +32,7 @@ a{
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.btn{  
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: all 4s;
-    width: fit-content;
-}
+
 .cursor{
     cursor: pointer;
 }
