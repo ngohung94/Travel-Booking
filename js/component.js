@@ -37,7 +37,7 @@ components.tourPage =
     <div class="aside-mid">
         <form id="tour-search">
             <div id="tour-search-content">Bạn muốn đi du lịch ở đâu?</div>
-            <input type="text" placeholder="Nhập địa danh">
+            <input style = "padding-left: 10px;" type="text" placeholder="Nhập địa danh">
             <div id="tour-search-submit">
                 <button class="btn cursor" type="submit">tìm Tour</button>
             </div>
