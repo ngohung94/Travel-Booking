@@ -4,7 +4,7 @@ components.tourPage =
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div class="logo-container cursor">
+            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
@@ -251,7 +251,8 @@ components.tourPage =
                     <button class="btn" type="submit">
                         Login
                     </button>
-                </div>
+                </div
+                >
             </form>
         </div>
     </div>

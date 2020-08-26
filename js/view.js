@@ -7,62 +7,83 @@ const dataTripsVN = [
     titleTrip: 'Đà Lạt'
   },
   {
-    src: '../img/img-hotel/danang.jpg',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
-  },
-  {
     src: '../img/img-hotel/nhatrang.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
-  },
-  {
-    src: '../img/img-hotel/dalat.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    alt: 'nha trang',
+    titleTrip: 'Nha Trang'
   },
   {
     src: '../img/img-hotel/danang.jpg',
     alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    titleTrip: 'Đà Nẵng'
+  },
+
+  {
+    src: '../img/img-tour/hạ long.jpg',
+    alt: 'ha long',
+    titleTrip: 'Hạ Long'
   },
   {
-    src: '../img/img-hotel/nhatrang.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/sapa.jpg',
+    alt: 'sa pa',
+    titleTrip: 'Sa Pa'
+  },
+  {
+    src: '../img/img-tour/phan thiết.jpg',
+    alt: 'phan thiet',
+    titleTrip: 'Phan Thiết'
+  },
+  {
+    src: '../img/img-tour/hà giang.jpg',
+    alt: 'ha giang',
+    titleTrip: 'Hà Giang'
+  },
+  {
+    src: '../img/img-tour/phú quốc.jpg',
+    alt: 'phu quoc',
+    titleTrip: 'Phú Quốc'
   },
 ];
 
 const dataTripsFR = [
   {
-    src: '../img/img-hotel/dalat.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/thái lan.jpg',
+    alt: 'thai lan',
+    titleTrip: 'Thái Lan'
   },
   {
-    src: '../img/img-hotel/danang.jpg',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/singapor.jpg',
+    alt: 'singapore',
+    titleTrip: 'Singapore'
   },
   {
-    src: '../img/img-hotel/nhatrang.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/trung quốc.jpg',
+    alt: 'trung quoc',
+    titleTrip: 'Trung Quốc'
   },
   {
-    src: '../img/img-hotel/dalat.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/nhật bản.jpg',
+    alt: 'nhat ban',
+    titleTrip: 'Nhật Bản'
   },
   {
-    src: '../img/img-hotel/danang.jpg',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/hồng kông.jpg',
+    alt: 'hong kong',
+    titleTrip: 'Hồng Kông'
   },
   {
-    src: '../img/img-hotel/nhatrang.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt'
+    src: '../img/img-tour/campuchia.jpg',
+    alt: 'campuchia',
+    titleTrip: 'Campuchia'
+  },
+  {
+    src: '../img/img-tour/phap.jpg',
+    alt: 'phap',
+    titleTrip: 'Pháp'
+  },
+  {
+    src: '../img/img-tour/hàn quốc.jpg',
+    alt: 'han quoc',
+    titleTrip: 'Hàn Quốc'
   },
 ];
 
@@ -98,14 +119,14 @@ view.setActiveScreen = (screenName) => {
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
       const clickLogin = document.getElementById('clickLogin')
-        clickLogin.addEventListener('click', () => {
-          document.getElementById('login').style = 'display:block'
-        })
-        const closeLogin = document.getElementById('closeLogin')
-        closeLogin.addEventListener('click', () => {
-          document.getElementById('login').style = 'display:none'
-        })
-        
+      clickLogin.addEventListener('click', () => {
+        document.getElementById('login').style = 'display:block'
+      })
+      const closeLogin = document.getElementById('closeLogin')
+      closeLogin.addEventListener('click', () => {
+        document.getElementById('login').style = 'display:none'
+      })
+
       // Login
       const loginForm = document.getElementById('login-form')
       loginForm.addEventListener('submit', (e) => {
@@ -128,11 +149,13 @@ view.setActiveScreen = (screenName) => {
       break;
     case 'tourPage':
       // in ra man trang chu
-      document.getElementById('app').innerHTML = components.tourPage
-
+      document.getElementById('app').innerHTML = components.tourPage;
+      document.getElementsByClassName("logo-container").addEventListener("click", () => {
+        view.setActiveScreen('hotelPage');
+      });
       break;
-      case 'travelGuide' :
-        document.getElementById('app').innerHTML = components.travelGuide
+    case 'travelGuide':
+      document.getElementById('app').innerHTML = components.travelGuide
       break;
     case 'registerScreen':
       document.getElementById('app').innerHTML = components.registerScreen
@@ -148,10 +171,10 @@ view.setActiveScreen = (screenName) => {
         }
         controller.register(dataRegister)
       })
-      
+
       break;
   }
-  
+
 }
 
 view.setErrorMessage = (elementId, message) => {
