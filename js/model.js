@@ -17,16 +17,21 @@ model.register = async (data) => {
 model.login = async (dataLogin) => {
     try {
         const response =  await firebase.auth().signInWithEmailAndPassword(dataLogin.email, dataLogin.password)
-        // console.log(response)
-        //     if (response.user.emailVerified === false){
-        //         document.getElementById('email-error').innerText  = 'Please verify your email'
-        //     }else{
-        //         model.currentUser = {
-        //             displayName : response.user.displayName,
-        //             email : response.user.email
-        //         } 
-        //         view.setActiveScreen('homePageScreen')
-        //     }
+        if (response.user.emailVerified) {
+            const logOut =  document.createElement('li')
+            logOut.id = "logOut"
+            logOut.innerText = `Log Out` 
+            logOut.addEventListener("click", (e) => {
+                e.preventDefault()
+                firebase.auth().signOut().then(() => {
+                    alert("Sign-out successful.")
+                    view.setActiveScreen('hotelPage')
+                })
+            })
+            document.querySelector('.drop-downs-login ul').appendChild(logOut)
+            document.getElementById('clickLogin').style.display = "none"
+            document.getElementById('clickRegister').style.display = "none"
+        }
     } catch(err){
         console.log(err)
         if (err.code == 'auth/user-not-found' || err.code == 'auth/invalid-email') {
