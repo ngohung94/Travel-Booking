@@ -92,7 +92,7 @@ footer .footer-container .tour-country{
     margin: 0px;
     color: #ffffff;
     left: 0;
-    bottom: 4px;
+    bottom: 2px;
     position: absolute;
     padding: 7px;
     width: 100%;
@@ -101,6 +101,9 @@ footer .footer-container .tour-country{
     background: rgba(0,174,239,.7);
     border-top: 1px solid rgba(111,204,237,.7);
 }
+
+
+
 
 
 

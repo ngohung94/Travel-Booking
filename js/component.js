@@ -50,175 +50,15 @@ components.tourPage =
     <h2 class="tour-country">Tour trong nước</h2>
     <hr>
     <div class="body-thumbnails">
-        <ul class="eight-thumbnails"><br>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Đà Lạt">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/đà lạt.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Đà Lạt</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Nha Trang">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/nha trang.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Nha Trang</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Đà nẵng">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/đà nẵng.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Đà Nẵng</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Hạ Long">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/hạ long.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Hạ Long</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Sa Pa">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/sapa.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Sa Pa</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Phan Thiết">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/phan thiết.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Phan Thiết</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Hà Giang">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/hà giang.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Hà GIang</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Phú Quốc">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/phú quốc.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Phú Quốc</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
+        <ul id = "common-tour" class="eight-thumbnails"><br>
 
         </ul>
     </div>
     <h2 class="tour-country">Tour nước ngoài</h2>
     <hr>
     <div class="body-thumbnails">
-        <ul class="eight-thumbnails"><br>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Thái Lan">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/thái lan.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Thái Lan</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Singapore">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/singapor.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Singapore</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Trung Quốc">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/trung quốc.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Trung Quốc</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Nhật Bản">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/nhật bản.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Nhật Bản</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Hong Kong">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/hồng kông.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Hong Kong</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Campuchia">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/campuchia.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Campuchia</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Pháp">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/phap.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Pháp</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-            <li class="box-thumbnails">
-                <div class="item-thumbnail">
-                    <a href="#" title="Tour du lịch Hàn Quốc">
-                        <img style="width: 287px; height: 218px;" class="img-responsive" src="../img/img-tour/hàn quốc.jpg"  alt="Not Found">
-                        <h3 class="item-name">
-                            <strong class="text-df">Hàn Quốc</strong>
-                        </h3>
-                    </a>
-                </div>
-            </li>
-
+        <ul id = "foreign-tour" class="eight-thumbnails"><br>
+          
         </ul>
     </div>
 </div>
@@ -258,7 +98,10 @@ components.tourPage =
     </div>
 </div>
 </div>
-`
+`;
+
+// components.innerTourTrips = `
+// `;
 
 components.registerScreen =
   `

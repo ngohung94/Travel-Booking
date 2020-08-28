@@ -1,0 +1,55 @@
+
+/* /////////// Phần style innerTourTrips */
+.innerTourContainer{
+   /* text-align: center; */
+   margin: auto;
+}
+.innerTourContainer .home-page-tour .home-page-tour-content{
+    color: rgb(65, 113, 216);
+    font-size: 15px;
+}
+
+.hr-innerTour-style{
+    margin: 10px 0;
+    
+}
+/* .innerTourContainer .home-page-tour{
+    text-align: center;
+} */
+
+
+.innerTourContainer .box-tour-main{
+    display: flex;
+    /* justify-content: center; */
+}
+/* phan aside-left */
+.aside-left .category-hotel .left-main-content-hotel{
+    width: 40%;
+    height: 100vh;
+}
+#list-tour-available-show .tour-available{
+    color: #00adef;
+}
+.tour-available .tour-wrapper p{
+    margin: 10px 0;
+}
+
+
+/* phan aside-right*/
+.innerTourContainer .aside-right{
+    flex-grow: 1;
+}
+.innerTourContainer .aside-right .tour-chosen-items{
+    display: flex;
+    color: #00adef;
+    font-size: 15px;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    
+}   
+
+@media only screen and (min-width: 1324px  ){
+    .innerTourContainer{
+        width: 1200px;
+    }
+}

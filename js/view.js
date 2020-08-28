@@ -150,9 +150,8 @@ view.setActiveScreen = (screenName) => {
     case 'tourPage':
       // in ra man trang chu
       document.getElementById('app').innerHTML = components.tourPage;
-      document.getElementsByClassName("logo-container").addEventListener("click", () => {
-        view.setActiveScreen('hotelPage');
-      });
+      view.showTourVN(dataTripsVN);
+      view.showTourFR(dataTripsFR);
       break;
     case 'travelGuide':
       document.getElementById('app').innerHTML = components.travelGuide
@@ -298,3 +297,45 @@ view.showAllHotels = (dataHotels) => {
     )
   })
 }
+
+//////////////// phần tour
+view.showTourVN = (dataTripsVN) => {
+  const commonToursVietnam = document.getElementById("common-tour");
+  let html = "";
+  for (let i = 0; i < dataTripsVN.length; i++) {
+    html += `
+        <li class="box-thumbnails">
+          <div class="item-thumbnail">
+            <a href="#" >
+                <img style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsVN[i].src}" alt="${dataTripsVN[[i]].alt}">
+                <h3 class="item-name">
+                    <strong class="text-df">${dataTripsVN[i].titleTrip}</strong>
+                </h3>
+            </a>
+          </div>
+        </li>
+    `;
+  }
+  commonToursVietnam.innerHTML = html;
+}
+///////////////
+view.showTourFR = (dataTripsFR) => {
+  const commonToursForeign = document.getElementById("foreign-tour");
+  let html = "";
+  for (let i = 0; i < dataTripsFR.length; i++) {
+    html += `
+        <li class="box-thumbnails">
+          <div class="item-thumbnail">
+            <a href="#" >
+                <img style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsFR[i].src}" alt="${dataTripsFR[[i]].alt}">
+                <h3 class="item-name">
+                    <strong class="text-df">${dataTripsFR[i].titleTrip}</strong>
+                </h3>
+            </a>
+          </div>
+        </li>
+    `;
+  }
+  commonToursForeign.innerHTML = html;
+}
+

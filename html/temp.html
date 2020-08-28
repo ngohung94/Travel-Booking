@@ -4,15 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="../css/hotel.css">
+    <link rel="stylesheet" href="../css/inner-hotel.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tour.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/innerTour.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/datedropper.pro.min.js"></script>
+
 </head>
 
 <body>
-    <div class="tour-container">
+    <!-- <div class="tour-container">
         <header>
             <div class="header-container">
                 <div id="logo">bookingtravel.vn</div>
@@ -239,6 +251,200 @@
                 </div>
             </div>
         </footer>
+    </div> -->
+
+
+    <!-- lay phan header của phần innerTour -->
+    <div class="header header-sticky">
+        <div class="container-wrapper">
+            <div class="header-bottom">
+                <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
+                    <div class="logo">
+                        <img src="../img/img-hotel/logo.png">
+                    </div>
+                </div>
+                <div class="navigation-wrapper">
+                    <ul>
+                        <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                        <li><a>Vé máy bay</a></li>
+                        <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                        <li><a>Cẩm nang</a></li>
+                        <div class="login">
+                            <div class="logo-login icon-secondary">
+                                <i class="fa fa-sign-in"></i>
+                            </div>
+                            <div class="drop-downs-login">
+                                <ul>
+                                    <li id="clickLogin">Login</li>
+                                    <li onClick="view.setActiveScreen('registerScreen')">Register</li>
+                                </ul>
+                            </div>
+                            <span><a>Login</a></span>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="tour-container">
+        <div class="tour-img">
+            <div class="aside-mid">
+                <form id="tour-search">
+                    <div id="tour-search-content">Bạn muốn đi du lịch ở đâu?</div>
+                    <input style="padding-left: 10px;" type="text" placeholder="Nhập địa danh">
+                    <div id="tour-search-submit">
+                        <button class="btn cursor" type="submit">tìm Tour</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    <!-- <footer>
+        <div class="footer-container">
+            <h2 class="tour-country">Tour trong nước</h2>
+            <hr>
+            <div class="body-thumbnails">
+                <ul id="common-tour" class="eight-thumbnails"><br>
+
+                </ul>
+            </div>
+            <h2 class="tour-country">Tour nước ngoài</h2>
+            <hr>
+            <div class="body-thumbnails">
+                <ul id="foreign-tour" class="eight-thumbnails"><br>
+
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <div id="login" class="modal">
+        <div class="modal-content">
+            <div id="loginModal">
+                <div class="modal-header">
+                    <h4 class="modal-title">LOGIN</h4>
+                    <span id="closeLogin" class="close">x</span>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="input-login-wrapper">
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Email...." name="email">
+                                <div class="error" id="email-error"></div>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="password" placeholder="Password...." name="password">
+                                <div class="error" id="password-error"></div>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <span id="redirect-to-register">
+                                Don't have an account? Register
+                            </span>
+                            <button class="btn" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- vào body phần innerTour -->
+    <div class="innerTourContainer">
+        <div class="home-page-tour">
+            <span class="home-page-tour-content">Tour du lịch</span> > <span class="home-page-tour-content">Tour du lịch
+                Viện Nam</span> > <span class="home-page-tour-content">Tour du lịch tỉnh ....</span>
+            <hr class="hr-innerTour-style">
+        </div>
+
+        <div class="box-tour-main">
+            <div class="aside-left">
+                <div class="category-hotel">
+                    <div class="left-main-content-hotel">
+                        <div class="filter-hotel">
+                            <h3 class="title">Lọc Tour theo</h3>
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Tên tour ...">
+                            </div>
+                        </div>
+                        <div class="filter-price">
+                            <h3 class="title">Theo mức giá</h3>
+                            <ul>
+                                <li><button class="btn">Dưới 1tr</button></li>
+                                <li><button class="btn">Từ 1tr đến 2tr</button></li>
+                                <li><button class="btn">Từ 2tr đến 3tr</button></li>
+                            </ul>
+                        </div>
+                        <div class="filter-rating">
+                            <h3 class="title">Xếp hạng đánh giá</h2>
+                                <form class="form-control">
+                                    <div class="checkbox-wrapper">
+                                        <input type="checkbox" id="1" name="one-star" value='1' />
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="checkbox" id="2" name="two-star" value='2'>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="checkbox" id="3" name="three-star" value='3'>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="checkbox" id="4" name="four-star" value='4'>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="checkbox" id="5" name="five-star" value='5'>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+
+                    <div id="right-main-content" class="right-main-content-hotel">
+                    </div>
+                </div>
+            </div>
+
+            <div class="aside-right">
+                <h1>TOUR ĐI ....</h1>
+                <ul class="tour-chosen-items">
+                    <li>Phổ biến nhất</li>
+                    <li>Giá</li>
+                    <li>Số ngày</li>
+                    <li>Sắp khởi hành</li>
+                    <li>Đánh giá cao</li>
+                    <li>Khuyến mãi</li>
+                </ul>
+                <hr class="hr-innerTour-style">
+                <div id="list-tour-available-show">
+                    <div class="tour-available">
+                        <div class="tour-wrapper">
+                            <h3>Tham quan Bình Ba - Quốc Đảo Tôm Hùm 1 ngày</h3>
+                            <img style="width: 250px; float: left; border-radius: 10px;" src="../img/img-tour/img-innerTour/bình ba, đảo tôm hùm.jpg" alt="Not found">
+                             <p>Ngày khởi hành: hằng ngày</p>
+                             <p>Thời gian</p>
+                             <p>Điểm khởi hành</p>
+                             <p>Khánh Hoà</p>
+                             <p>Phương tiện: ô tô, Máy bay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
