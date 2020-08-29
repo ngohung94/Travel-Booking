@@ -19,15 +19,11 @@ const init = () => {
           displayName: user.displayName,
           email: user.email
         }
-        alert('Logged in successfully')
-        view.setActiveScreen('hotelPage')
-        view.addLogOut()
-      } else {
-        alert('Please verify your email')
-      }
-    } else {
-      view.setActiveScreen('hotelPage')
+      }else{
+          document.getElementById('email-error').innerText  = 'Please verify your email'
+      } 
     }
+      view.setActiveScreen('hotelPage')
   });
 }
 window.onload = init;

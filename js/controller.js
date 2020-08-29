@@ -46,3 +46,11 @@ controller.login = (dataLogin) =>{
         model.login(dataLogin)
     }
 }
+
+controller.forgotPassword  = (data) => {
+  if (data.trim() === ''){
+    view.setErrorMessage('forgot-email-error' , 'Please input email')
+  }else {
+    view.setErrorMessage('forgot-email-error', '')
+  }
+}

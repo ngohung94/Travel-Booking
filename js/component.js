@@ -1,222 +1,4 @@
 const components = {}
-components.tourPage =
-  `
-<div class="header header-sticky">
-    <div class="container-wrapper">
-        <div class="header-bottom">
-            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
-                <div class="logo">
-                    <img src="../img/img-hotel/logo.png">
-                </div>
-            </div>
-            <div class="navigation-wrapper">
-            <ul>
-            <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
-            <li><a>Vé máy bay</a></li>
-            <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
-            <li><a>Cẩm nang</a></li>
-            <div class="login">
-              <div class="logo-login icon-secondary">
-                <i class="fa fa-sign-in"></i>
-              </div>
-              <div class="drop-downs-login">
-                  <ul >
-                      <li id="clickLogin">Login</li>
-                      <li onClick="view.setActiveScreen('registerScreen')">Register</li>
-                  </ul>
-              </div>
-              <span><a>Login</a></span>
-            </div>
-          </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="tour-container">
-    <div class="tour-img">
-    <div class="aside-mid">
-        <form id="tour-search">
-            <div id="tour-search-content">Bạn muốn đi du lịch ở đâu?</div>
-            <input style = "padding-left: 10px;" type="text" placeholder="Nhập địa danh">
-            <div id="tour-search-submit">
-                <button class="btn cursor" type="submit">tìm Tour</button>
-            </div>
-        </form>
-    </div>
-</div>
-</div>
-<footer>
-<div class="footer-container">
-    <h2 class="tour-country">Tour trong nước</h2>
-    <hr>
-    <div class="body-thumbnails">
-        <ul id = "common-tour" class="eight-thumbnails"><br>
-
-        </ul>
-    </div>
-    <h2 class="tour-country">Tour nước ngoài</h2>
-    <hr>
-    <div class="body-thumbnails">
-        <ul id = "foreign-tour" class="eight-thumbnails"><br>
-          
-        </ul>
-    </div>
-</div>
-</footer>
-</div>
-
-<div id="login" class="modal">
-<div class="modal-content">
-    <div id="loginModal">
-        <div class="modal-header">
-            <h4 class="modal-title">LOGIN</h4>              
-            <span id="closeLogin" class="close">x</span>
-        </div>
-        <div class="modal-body">
-            <form  id="login-form">
-                <div class="input-login-wrapper">
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
-                    </div>
-                </div>
-                <div class="form-action">
-                    <span id="redirect-to-register"  >
-                        Don't have an account? Register
-                    </span>
-                    <button class="btn" type="submit">
-                        Login
-                    </button>
-                </div
-                >
-            </form>
-        </div>
-    </div>
-</div>
-</div>
-`;
-
-// components.innerTourTrips = `
-// `;
-
-components.registerScreen =
-  `
-<div class="header header-sticky">
-  <div class="container-wrapper">
-      <div class="header-bottom">
-          <div class="logo-container cursor" onClick="view.setActiveScreen('hotelPage')">
-              <div >
-                  <img src="../img/img-hotel/logo.png">
-              </div>
-          </div>
-          <div class="navigation-wrapper">
-              < <ul>
-              <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
-              <li><a>Vé máy bay</a></li>
-              <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
-              <li><a>Cẩm nang</a></li>
-              <div class="login">
-                <div class="logo-login icon-secondary">
-                  <i class="fa fa-sign-in"></i>
-                </div>
-                <div class="drop-downs-login">
-                    <ul >
-                        <li id="clickLogin">Login</li>
-                        <li>Register</li>
-                    </ul>
-                </div>
-                <span><a>Login</a></span>
-              </div>
-            </ul>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div id="login" class="modal">
-<div class="modal-content">
-    <div id="loginModal">
-        <div class="modal-header">
-            <h4 class="modal-title">LOGIN</h4>              
-            <span id="closeLogin" class="close">x</span>
-        </div>
-        <div class="modal-body">
-            <form  id="login-form">
-                <div class="input-login-wrapper">
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
-                    </div>
-                </div>
-                <div class="form-action">
-                    <span id="redirect-to-register"  >
-                        Don't have an account? Register
-                    </span>
-                    <button class="btn" type="submit">
-                        Login
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="registerBody">
-<div class="registerForm">
-    <div class="register-header">
-        <h4  >REGISTER</h4>              
-    </div>
-    <div class="modal-content">
-        <div id="loginModal">
-            <div class="modal-body">
-                <form  id="register-form">
-                    <div class="input-name-wrapper">
-                        <div class="input-wrapper1">
-                            <input type="text" name="firstName" placeholder="First name">
-                            <div class="error" id="first-name-error"></div>
-                        </div>
-                        <div class="input-wrapper1">
-                            <input type="text" name="lastName" placeholder="Last name">
-                            <div class="error" id="last-name-error"></div>
-                        </div>
-                        <div class="input-wrapper1">
-                            <input type="text" placeholder="Email...." name="email">
-                            <div class="error" id="email-error"></div>
-                        </div>
-                        <div class="input-wrapper1">
-                            <input type="password" placeholder="Password...." name="password">
-                            <div class="error" id="password-error"></div>
-                        </div>
-                        <div class="input-wrapper1">
-                            <input type="password" placeholder="Confirm password" name="confirmPassword">
-                            <div class="error" id="confirm-password-error"></div>
-                        </div>
-                    </div>
-                    <div class="form-action">
-                        <button class="btn1 btn-register" type="submit">
-                            Register
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
-
-`
-
 components.hotelPage = `
 <div class="video-wrapper">
 <video autoplay muted loop id="myVideo">
@@ -267,9 +49,9 @@ components.hotelPage = `
                   <i class="fa fa-sign-in"></i>
                 </div>
                 <div class="drop-downs-login">
-                    <ul >
+                    <ul>
                         <li id="clickLogin">Login</li>
-                        <li onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
                     </ul>
                 </div>
                 <span><a>Login</a></span>
@@ -341,12 +123,17 @@ components.hotelPage = `
                     </div>
                 </div>
                 <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
                     <span onClick="view.setActiveScreen('registerScreen')" >
                         Don't have an account? Register
                     </span>
-                    <button class="btn1" type="submit">
-                        Login
-                    </button>
+                    <span onClick="view.setActiveScreen('forgotPassword')">
+                        Forgot password
+                    </span>
                 </div>
             </form>
         </div>
@@ -354,31 +141,34 @@ components.hotelPage = `
 </div>
 </div>
 `
-
 components.innerHotel = `
 <div class="header header-sticky">
 <div class="container-wrapper">
   <div class="header-bottom">
-    <div class="logo-container">
+    <div class="logo-container cursor" onClick='view.setActiveScreen("hotelPage")'>
       <div class="logo">
         <img src="../img/img-hotel/logo.png">
       </div>
     </div>
     <div class="navigation-wrapper">
-      <ul>
-        <li><a>Khách sạn</a></li>
+    <ul>
+        <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
         <li><a>Vé máy bay</a></li>
-        <li><a>Tour</a></li>
+        <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
         <li><a>Cẩm nang</a></li>
         <div class="login">
-          <a href="#">
-            <div class="logo-login icon-secondary">
-              <i class="fa fa-sign-in"></i>
-            </div>
-            <span><a>Login</a></span>
-          </a>
+        <div class="logo-login icon-secondary">
+            <i class="fa fa-sign-in"></i>
         </div>
-      </ul>
+        <div class="drop-downs-login">
+            <ul>
+                <li id="clickLogin">Login</li>
+                <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
+            </ul>
+        </div>
+        <span><a>Login</a></span>
+        </div>
+  </ul>
     </div>
   </div>
   <div class="header-bottom-bottom">
@@ -471,4 +261,373 @@ components.innerHotel = `
 </div>
 </div>
 
+
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>              
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form  id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper1">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-wrapper1">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
+                    <span onClick="view.setActiveScreen('registerScreen')" >
+                        Don't have an account? Register
+                    </span>
+                    <span onClick="view.setActiveScreen('forgotPassword')">
+                        Forgot password
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 `
+
+
+components.tourPage =
+  `
+<div class="header header-sticky">
+    <div class="container-wrapper">
+        <div class="header-bottom">
+            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
+                <div class="logo">
+                    <img src="../img/img-hotel/logo.png">
+                </div>
+            </div>
+            <div class="navigation-wrapper">
+            <ul>
+                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li><a>Vé máy bay</a></li>
+                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li><a>Cẩm nang</a></li>
+                <div class="login">
+                    <div class="logo-login icon-secondary">
+                    <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="drop-downs-login">
+                        <ul>
+                            <li id="clickLogin">Login</li>
+                            <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        </ul>
+                    </div>
+                    <span><a>Login</a></span>
+                </div>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tour-container">
+    <div class="tour-img">
+    <div class="aside-mid">
+        <form id="tour-search">
+            <div id="tour-search-content">Bạn muốn đi du lịch ở đâu?</div>
+            <input style = "padding-left: 10px;" type="text" placeholder="Nhập địa danh">
+            <div id="tour-search-submit">
+                <button class="btn cursor" type="submit">tìm Tour</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<footer>
+<div class="footer-container">
+    <h2 class="tour-country">Tour trong nước</h2>
+    <hr>
+    <div class="body-thumbnails">
+        <ul id = "common-tour" class="eight-thumbnails"><br>
+
+        </ul>
+    </div>
+    <h2 class="tour-country">Tour nước ngoài</h2>
+    <hr>
+    <div class="body-thumbnails">
+        <ul id = "foreign-tour" class="eight-thumbnails"><br>
+          
+        </ul>
+    </div>
+</div>
+</footer>
+</div>
+
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>              
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form  id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper1">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-wrapper1">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
+                    <span onClick="view.setActiveScreen('registerScreen')" >
+                        Don't have an account? Register
+                    </span>
+                    <span onClick="view.setActiveScreen('forgotPassword')">
+                        Forgot password
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+`;
+
+// components.innerTourTrips = `
+// `;
+
+components.registerScreen =
+`
+<div class="header header-sticky">
+    <div class="container-wrapper">
+        <div class="header-bottom">
+            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
+                <div class="logo">
+                    <img src="../img/img-hotel/logo.png">
+                </div>
+            </div>
+            <div class="navigation-wrapper">
+            <ul>
+                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li><a>Vé máy bay</a></li>
+                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li><a>Cẩm nang</a></li>
+                <div class="login">
+                    <div class="logo-login icon-secondary">
+                    <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="drop-downs-login">
+                        <ul>
+                            <li id="clickLogin">Login</li>
+                            <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        </ul>
+                    </div>
+                    <span><a>Login</a></span>
+                </div>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>              
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form  id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper1">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-wrapper1">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
+                    <span onClick="view.setActiveScreen('registerScreen')" >
+                        Don't have an account? Register
+                    </span>
+                    <span onClick="view.setActiveScreen('forgotPassword')">
+                        Forgot password
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="registerBody">
+<div class="registerForm">
+    <div class="register-header">
+        <h4  >REGISTER</h4>              
+    </div>
+    <div class="modal-content">
+        <div id="loginModal">
+            <div class="modal-body">
+                <form  id="register-form">
+                    <div class="input-name-wrapper">
+                        <div class="input-wrapper1">
+                            <input type="text" name="firstName" placeholder="First name">
+                            <div class="error" id="first-name-error"></div>
+                        </div>
+                        <div class="input-wrapper1">
+                            <input type="text" name="lastName" placeholder="Last name">
+                            <div class="error" id="last-name-error"></div>
+                        </div>
+                        <div class="input-wrapper1">
+                            <input type="text" placeholder="Email...." name="email">
+                            <div class="error" id="email-error"></div>
+                        </div>
+                        <div class="input-wrapper1">
+                            <input type="password" placeholder="Password...." name="password">
+                            <div class="error" id="password-error"></div>
+                        </div>
+                        <div class="input-wrapper1">
+                            <input type="password" placeholder="Confirm password" name="confirmPassword">
+                            <div class="error" id="confirm-password-error"></div>
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <button class="btn1 btn-register" type="submit">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+`
+
+
+components.forgotPassword = 
+`
+<div class="header header-sticky">
+    <div class="container-wrapper">
+        <div class="header-bottom">
+            <div class="logo-container cursor" onClick="view.setActiveScreen('hotelPage')">
+                <div class="logo">
+                    <img src="../img/img-hotel/logo.png">
+                </div>
+            </div>
+            <div class="navigation-wrapper">
+            <ul>
+                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li><a>Vé máy bay</a></li>
+                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li><a>Cẩm nang</a></li>
+                <div class="login">
+                    <div class="logo-login icon-secondary">
+                    <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="drop-downs-login">
+                        <ul>
+                            <li id="clickLogin">Login</li>
+                            <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        </ul>
+                    </div>
+                    <span><a>Login</a></span>
+                </div>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>              
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form  id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper1">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-wrapper1">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
+                    <span onClick="view.setActiveScreen('registerScreen')" >
+                        Don't have an account? Register
+                    </span>
+                    <span onClick="view.setActiveScreen('forgotPassword')">
+                        Forgot password
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="box-body">
+    <h1 class="title-forgot">
+        Khôi phục mật khẩu
+    </h1>
+    <form id="forgotPass">
+                <div>
+                    <input type="radio" checked="">
+                    Lấy lại mật khẩu bằng email.
+                </div>     
+                <div>
+                    Địa chỉ email :
+                </div>
+                <div>
+                    <input class="send-email" name="email" type="text">
+                    <span class="error" id="forgot-email-error"></span>
+                </div>
+                <p class="">
+                    Để đặt lại mật khẩu của mình, hãy nhập địa chỉ email mà bạn sử dụng để đăng nhập
+                    vào hệ thống.
+                </p>
+        <div class="btnn">
+            <button class="btn2" type="submit" id="forgotPassword">Khôi phục mật khẩu</button>
+        </div>  
+    </form>
+</div>
+
+`
+

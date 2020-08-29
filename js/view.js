@@ -131,26 +131,6 @@ view.setActiveScreen = (screenName) => {
       view.showTripsFR(dataTripsFR);
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
-      const clickLogin = document.getElementById('clickLogin')
-      clickLogin.addEventListener('click', () => {
-        document.getElementById('login').style = 'display:block'
-      })
-      const closeLogin = document.getElementById('closeLogin')
-      closeLogin.addEventListener('click', () => {
-        document.getElementById('login').style = 'display:none'
-      })
-
-      // Login
-      const loginForm = document.getElementById('login-form')
-      loginForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-        loginForm.email.value = loginForm.email.value.trim()
-        const dataLogin = {
-          email: loginForm.email.value,
-          password: loginForm.password.value
-        }
-        controller.login(dataLogin)
-      })
       break;
 
     // Inner Hotel Page
@@ -183,28 +163,43 @@ view.setActiveScreen = (screenName) => {
         }
         controller.register(dataRegister)
       })
-
       break;
-  }
-
+    case 'forgotPassword':
+        document.getElementById('app').innerHTML = components.forgotPassword
+        const forgotPass = document.getElementById('forgotPass')
+        forgotPass.addEventListener('submit', (e) => {          
+            e.preventDefault()
+            const emailAddress = forgotPass.email.value;
+            controller.forgotPassword(emailAddress)
+            firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
+              alert('Please access the password reset email')
+              })
+        })
+      break;
+    }
+    document.getElementById('clickLogin').addEventListener('click', () => {
+      document.getElementById('login').style.display = 'block'
+    })
+    document.getElementById('closeLogin').addEventListener('click', () => {
+      document.getElementById('login').style.display = 'none'
+    })
+    // Login
+    const loginForm = document.getElementById('login-form')
+    loginForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    loginForm.email.value = loginForm.email.value.trim()
+    const dataLogin = {
+      email: loginForm.email.value,
+      password: loginForm.password.value
+    }
+    controller.login(dataLogin)
+    })
 }
+  
+
 
 view.setErrorMessage = (elementId, message) => {
   document.getElementById(elementId).innerText = message
-}
-view.addLogOut = () => {
-  const logOut = document.createElement('li')
-  logOut.id = "logOut"
-  logOut.innerText = `Log Out`
-  document.querySelector('.drop-downs-login').appendChild(logOut)
-  document.getElementById("logOut").addEventListener("click", (e) => {
-    e.preventDefault()
-    firebase.auth().signOut().then(() => {
-      alert("Sign-out successful.")
-    })
-  })
-  document.getElementById('clickLogin').style = "display : none"
-  document.getElementById('clickRegister').style = "display : none"
 }
 
 // Show common trips Viet Nam
