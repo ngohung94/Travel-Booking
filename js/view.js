@@ -1,5 +1,18 @@
 const view = {};
 
+const dataTourVN = [
+  {
+    title: 'Bình Ba,Quốc Đảo Tôm Hùm',
+    scr: '../img/img-tour/img-innerTour/bình ba, đảo tôm hùm.jpg',
+    alt: 'Not Found',
+    dayStart: 'Hằng ngày',
+    timeTour: '1 ngày 0 đêm',
+    addressStart: 'Khánh Hoà',
+    vehicle: 'ô tô, máy bay',
+    price: '280,000đ',
+  }
+  
+];
 const dataTripsVN = [
   {
     src: '../img/img-hotel/dalat.webp',
