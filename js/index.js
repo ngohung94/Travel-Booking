@@ -12,7 +12,6 @@ const init = () => {
   firebase.initializeApp(firebaseConfig);
 
   firebase.auth().onAuthStateChanged(function (user) {
-    view.setActiveScreen('hotelPage')
     if (user) {
       // User is signed in.
       if (user.emailVerified) {

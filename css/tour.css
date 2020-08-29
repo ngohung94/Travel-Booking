@@ -56,19 +56,27 @@ footer{
     width: 100%;
     /* text-align: center; */
 }
+.footer-container .hr-space{
+    margin-bottom: 20px;
+}
 footer .footer-container .tour-country{
     margin-bottom: 10px;
     color: #443d3d;
     text-transform: uppercase;
     margin-top: 15px;
     clear: both;
+    padding-left: 10px;
 }
 .footer-container .body-thumbnails{
     font-size: 13px;
+    justify-content: space-between;  
 }
 .body-thumbnails .eight-thumbnails{
     clear: both;
     padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
     
 }
 .eight-thumbnails .item-thumbnail{
@@ -79,9 +87,10 @@ footer .footer-container .tour-country{
     width: 100%;
 }
 .eight-thumbnails .box-thumbnails{
-    float: left;
+    /* float: left; */
     margin: 5px;
     transition: transform .2s;
+    width: 287px;
     
 }
 .box-thumbnails:hover{
@@ -131,12 +140,14 @@ footer .footer-container .tour-country{
     }
 
 }
-/* @media only screen and(max-width:1023px ) and (min-width:740px){
-    
-} */
+@media only screen and (min-width: 740px) and (max-width: 1323px){
+    #tour-search-content{
+        font-size: 15px;
+    }
+}
 @media only screen and (max-width: 739px ){
     #tour-search-content{
-        font-size: 5px;
+        font-size: 15px;
     }
     #tour-search-submit button{
       font-size: 10px;
