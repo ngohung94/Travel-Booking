@@ -629,3 +629,76 @@ components.innerHotel = `
 </div>
 
 `
+
+
+// Page detail hotel
+components.detailHotel = `
+<div class="header header-sticky">
+<div class="container-wrapper">
+  <div class="header-bottom">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="../img/img-hotel/logo.png">
+      </div>
+    </div>
+    <div class="navigation-wrapper">
+      <ul>
+        <li><a>Khách sạn</a></li>
+        <li><a>Vé máy bay</a></li>
+        <li><a>Tour</a></li>
+        <li><a>Cẩm nang</a></li>
+        <div class="login">
+          <a href="#">
+            <div class="logo-login icon-secondary">
+              <i class="fa fa-sign-in"></i>
+            </div>
+            <span><a>Login</a></span>
+          </a>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="header-bottom-bottom">
+    <!-- <div class="header-content"> -->
+    <form class="form-wrapper">
+      <div class="input-wrapper icon-primary">
+        <i class="fa fa-map-marker"></i>
+        <input type="text" placeholder="Nhập tên khách sạn" />
+      </div>
+      <div class="input-wrapper icon-primary">
+        <i class="fa fa-calendar"></i>
+        <input id="date-input1" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
+          data-dd-theme="leaf" placeholder="Chọn ngày đi" />
+      </div>
+      <div class="input-wrapper icon-primary">
+        <i class="fa fa-calendar"></i>
+        <input id="date-input2" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
+          data-dd-theme="leaf" placeholder="Chọn ngày về" />
+      </div>
+      <div class="input-wrapper icon-primary">
+        <i class="fa fa-hotel"></i> <input type="text" placeholder="Nhập số phòng" />
+      </div>
+      <div class="btn-wrapper">
+        <button class="btn btn-primary">Tìm khách sạn</button>
+      </div>
+    </form>
+    <!-- </div> -->
+  </div>
+</div>
+</div>
+
+<div class="detail-hotel">
+<div class="container-wrapper">
+  <div id="header-top-content" class="header-top-content">
+  </div>
+
+  <div id='image-overview' class="image-overview">
+  </div>
+
+  <h2 class="category-hotel">Danh sách các phòng</h2>
+  <div id="one-hotel-review" class="one-hotel-review">
+  </div>
+</div>
+</div>
+
+`
