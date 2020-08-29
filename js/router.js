@@ -5,7 +5,7 @@ var router = new Navigo(root, useHash, hash);
 
 router.on('/', function () {
     view.setActiveScreen("hotelPage");
-})
+}).resolve();
 
 router.on('/hotel', function () {
     view.setActiveScreen("hotelPage");
@@ -15,8 +15,12 @@ router.on('/tour', function () {
     view.setActiveScreen("tourPage");
 }).resolve();
 
+
+
 router.on('/innerHotel',function(){
     view.setActiveScreen("innerHotelPage");
-});
+}).resolve();
 
-
+router.on('/travelGuide',function(){
+    view.setActiveScreen("travelGuide");
+}).resolve();
