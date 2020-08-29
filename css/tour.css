@@ -81,7 +81,11 @@ footer .footer-container .tour-country{
 .eight-thumbnails .box-thumbnails{
     float: left;
     margin: 5px;
+    transition: transform .2s;
     
+}
+.box-thumbnails:hover{
+    transform: scale(1.08);
 }
 
 .eight-thumbnails .item-thumbnail a{

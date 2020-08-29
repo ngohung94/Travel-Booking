@@ -3,15 +3,44 @@ const view = {};
 const dataTourVN = [
   {
     title: 'Bình Ba,Quốc Đảo Tôm Hùm',
-    scr: '../img/img-tour/img-innerTour/bình ba, đảo tôm hùm.jpg',
+    scr: '../img/img-tour/img-innerTour/Tour Nha Trang/bình ba, đảo tôm hùm.jpg',
     alt: 'Not Found',
-    dayStart: 'Hằng ngày',
+    dayStart: 'Hàng ngày',
     timeTour: '1 ngày 0 đêm',
     addressStart: 'Khánh Hoà',
     vehicle: 'ô tô, máy bay',
     price: '280,000đ',
+  },
+  {
+    title: 'Thiên Đường Maldives Bình Lập',
+    scr: '../img/img-tour/img-innerTour/Tour Nha Trang/tour thiên đường Maldives.jpg',
+    alt: 'Not Found',
+    dayStart: 'Hàng ngày',
+    timeTour: '1 ngày 0 đêm',
+    addressStart: 'Khánh Hoà',
+    vehicle: 'ô tô',
+    price: '680,000đ',
+  },
+  {
+    title: 'Du Lịch Cù Lao Chàm',
+    scr: '../img/img-tour/img-innerTour/Tour đà Nẵng/tour-du-lich-cu-lao-cham-trong-1-ngay-dl3.jpg',
+    alt: 'Not Found',
+    dayStart: 'Hàng ngày',
+    timeTour: '1 ngày 0 đêm',
+    addressStart: 'Đà Nẵng',
+    vehicle: 'ô tô, tàu biển',
+    price: '680,000đ',
+  },
+  {
+    title: 'Du Lịch Hà Nội - Sapa - Hạ Long - Ninh Bình',
+    scr: '../img/img-tour/img-innerTour/Tour Hà Nội/tour-du-lich-ha-noi-sapa-ha-long-ninh-binh-6-ngay-5-dem.jpg',
+    alt: 'Not Found',
+    dayStart: 'Hàng ngày',
+    timeTour: '6 ngày 5 đêm',
+    addressStart: 'Hà Nội',
+    vehicle: 'ô tô, tàu biển',
+    price: '7,000,000đ',
   }
-  
 ];
 const dataTripsVN = [
   {
@@ -22,7 +51,7 @@ const dataTripsVN = [
   {
     src: '../img/img-hotel/nhatrang.webp',
     alt: 'nha trang',
-    titleTrip: 'Nha Trang'
+    titleTrip: 'Nha Trang',
   },
   {
     src: '../img/img-hotel/danang.jpg',
@@ -140,12 +169,17 @@ view.setActiveScreen = (screenName) => {
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
       break;
+
     case 'tourPage':
       // in ra man trang chu
       document.getElementById('app').innerHTML = components.tourPage;
       view.showTourVN(dataTripsVN);
       view.showTourFR(dataTripsFR);
       break;
+    case 'innerTourTrips':
+      document.getElementById('app').innerHTML = components.innerTourTrips;
+      break;
+
     case 'travelGuide':
       document.getElementById('app').innerHTML = components.travelGuide
       break;
@@ -205,45 +239,45 @@ view.setErrorMessage = (elementId, message) => {
 // Show common trips Viet Nam
 view.showTripsVN = (dataTripsVN) => {
   const commonTripsVietnam = document.getElementById('common-trips-vietnam');
-  commonTripsVietnam.innerHTML = dataTripsVN.map((ele, id) => {
-    return (
-      `
-      <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage')">
-        <div class="img-trip">
-          <img src="${ele.src}" alt="${ele.alt}">
-      </div>
-        <div class="info-detail">
-          Chi tiết
-      </div>
-        <div class="info-trip">
-          <h5 class="title-trip">${ele.titleTrip}</h5>
-        </div>
-      </div>
-      `
-    )
-  })
+  let html = "";
+  for (let i = 0; i < dataTripsVN.length; i++) {
+    html += `
+          <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage')">
+            <div class="img-trip">
+              <img src="${dataTripsVN[i].src}" alt="${dataTripsVN[i].alt}">
+          </div>
+            <div class="info-detail">
+              Chi tiết
+          </div>
+            <div class="info-trip">
+              <h5 class="title-trip">${dataTripsVN[i].titleTrip}</h5>
+            </div>
+          </div>
+          `;
+  }
+  commonTripsVietnam.innerHTML = html;
 
 }
 
 view.showTripsFR = (dataTripsFR) => {
   const commonTripsForeign = document.getElementById('common-trips-foreign');
-  commonTripsForeign.innerHTML = dataTripsFR.map((ele, id) => {
-    return (
-      `
-      <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage')">
-        <div class="img-trip">
-          <img src="${ele.src}" alt="${ele.alt}">
-      </div>
-        <div class="info-detail">
-          Chi tiết
-      </div>
-        <div class="info-trip">
-          <h5 class="title-trip">${ele.titleTrip}</h5>
+  let html = "";
+  for (let i = 0; i < dataTripsFR.length; i++) {
+    html += `
+        <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage')">
+          <div class="img-trip">
+            <img src="${dataTripsFR[i].src}" alt="${dataTripsFR[i].alt}">
         </div>
-      </div>
-      `
-    )
-  })
+          <div class="info-detail">
+            Chi tiết
+        </div>
+          <div class="info-trip">
+            <h5 class="title-trip">${dataTripsFR[i].titleTrip}</h5>
+          </div>
+        </div>
+    `;
+  }
+  commonTripsForeign.innerHTML = html;
 }
 
 // Show all hotels
@@ -314,8 +348,8 @@ view.showTourVN = (dataTripsVN) => {
     html += `
         <li class="box-thumbnails">
           <div class="item-thumbnail">
-            <a href="#" >
-                <img style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsVN[i].src}" alt="${dataTripsVN[[i]].alt}">
+            <a onClick="view.setActiveScreen('innerTourTrips')" >
+                <img class = "cursor" style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsVN[i].src}" alt="${dataTripsVN[[i]].alt}">
                 <h3 class="item-name">
                     <strong class="text-df">${dataTripsVN[i].titleTrip}</strong>
                 </h3>

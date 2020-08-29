@@ -1,4 +1,5 @@
 const components = {}
+
 components.hotelPage = `
 <div class="video-wrapper">
 <video autoplay muted loop id="myVideo">
@@ -33,16 +34,16 @@ components.hotelPage = `
           </div>
         </div>
         <div class="header-bottom">
-          <div class="logo-container cursor"onClick="view.setActiveScreen('hotelPage')">
+          <div class="logo-container cursor" onClick = "router.navigate('/hotel')">
             <div class="logo" >
               <img src="../img/img-hotel/logo.png">
             </div>
           </div>
           <div class="navigation-wrapper">
             <ul>
-              <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+              <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
               <li><a>Vé máy bay</a></li>
-              <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+              <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
               <li><a>Cẩm nang</a></li>
               <div class="login">
                 <div class="logo-login icon-secondary">
@@ -152,9 +153,9 @@ components.innerHotel = `
     </div>
     <div class="navigation-wrapper">
     <ul>
-        <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+        <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
         <li><a>Vé máy bay</a></li>
-        <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+        <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
         <li><a>Cẩm nang</a></li>
         <div class="login">
         <div class="logo-login icon-secondary">
@@ -303,20 +304,20 @@ components.innerHotel = `
 
 
 components.tourPage =
-  `
+    `
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
+            <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
             </div>
             <div class="navigation-wrapper">
             <ul>
-                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
                 <li><a>Vé máy bay</a></li>
-                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
                 <li><a>Cẩm nang</a></li>
                 <div class="login">
                     <div class="logo-login icon-secondary">
@@ -407,24 +408,187 @@ components.tourPage =
 </div>
 `;
 
-// components.innerTourTrips = `
-// `;
+///// phan trong tour:
+components.innerTourTrips = `
+<div class="header header-sticky">
+<div class="container-wrapper">
+    <div class="header-bottom">
+        <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
+            <div class="logo">
+                <img src="../img/img-hotel/logo.png">
+            </div>
+        </div>
+        <div class="navigation-wrapper">
+            <ul>
+                <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
+                <li><a>Vé máy bay</a></li>
+                <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
+                <li><a>Cẩm nang</a></li>
+                <div class="login">
+                    <div class="logo-login icon-secondary">
+                        <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="drop-downs-login">
+                        <ul>
+                            <li id="clickLogin">Login</li>
+                            <li onClick="view.setActiveScreen('registerScreen')">Register</li>
+                        </ul>
+                    </div>
+                    <span><a>Login</a></span>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <span id="redirect-to-register">
+                        Don't have an account? Register
+                    </span>
+                    <button class="btn" type="submit">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<div class="innerTourContainer">
+<div class="home-page-tour">
+    <span class="home-page-tour-content">Tour du lịch</span> > <span class="home-page-tour-content">Tour du lịch
+        Viện Nam</span> > <span class="home-page-tour-content">Tour du lịch tỉnh ....</span>
+    <hr class="hr-innerTour-style">
+</div>
+
+<div class="box-tour-main">
+    <div class="aside-left">
+        <div class="category-hotel">
+            <div class="left-main-content-hotel">
+                <div class="filter-hotel">
+                    <h3 class="title">Lọc Tour theo</h3>
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Tên tour ...">
+                    </div>
+                </div>
+                <div class="filter-price">
+                    <h3 class="title">Theo mức giá</h3>
+                    <ul>
+                        <li><button class="btn">Dưới 1tr</button></li>
+                        <li><button class="btn">Từ 1tr đến 2tr</button></li>
+                        <li><button class="btn">Từ 2tr đến 3tr</button></li>
+                    </ul>
+                </div>
+                <div class="filter-rating">
+                    <h3 class="title">Xếp hạng đánh giá</h2>
+                        <form class="form-control">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="1" name="one-star" value='1' />
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="2" name="two-star" value='2'>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="3" name="three-star" value='3'>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="4" name="four-star" value='4'>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="5" name="five-star" value='5'>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                        </form>
+                </div>
+            </div>
+
+            <div id="right-main-content" class="right-main-content-hotel">
+            </div>
+        </div>
+    </div>
+
+    <div class="aside-right">
+        <h1>TOUR ĐI ....</h1>
+        <ul class="tour-chosen-items">
+            <li class="tour-items-hover cursor">Phổ biến nhất</li>
+            <li class="tour-items-hover cursor">Giá</li>
+            <li class="tour-items-hover cursor">Số ngày</li>
+            <li class="tour-items-hover cursor">Sắp khởi hành</li>
+            <li class="tour-items-hover cursor">Đánh giá cao</li>
+            <li class="tour-items-hover cursor">Khuyến mãi</li>
+        </ul>
+        <hr class="hr-innerTour-style">
+
+        <div id="list-tour-available-show">
+            <div class="tour-available">
+                <div class="tour-wrapper">
+                    <h3>Tham quan Bình Ba - Quốc Đảo Tôm Hùm 1 ngày</h3>
+                    <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
+                        src="../img/img-tour/img-innerTour/Tour Nha Trang/bình ba, đảo tôm hùm.jpg" alt="Not found">
+                    <p><span style="font-weight:550;">Ngày khởi hành:</span> hằng ngày</p>
+                    <p><span style="font-weight:550;">Thời gian: </span></p>
+                    <p><span style="font-weight:550;">Điểm khởi hành:</span> Khánh Hoà</p>
+                    <p><span style="font-weight:550;">Phương tiện: </span> ô tô, Máy bay</p>
+                    <strong class="price">280,000đ</strong>
+                    <div class="button-price cursor"><button class="btn">Xem tour</button></div>
+                </div>
+            </div>
+            <hr>
+            
+        </div>
+    </div>
+</div>
+</div>
+`;
 
 components.registerScreen =
-`
+    `
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div onclick="view.setActiveScreen('hotelPage')" class="logo-container cursor">
+            <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
             </div>
             <div class="navigation-wrapper">
             <ul>
-                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
                 <li><a>Vé máy bay</a></li>
-                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
                 <li><a>Cẩm nang</a></li>
                 <div class="login">
                     <div class="logo-login icon-secondary">
@@ -530,21 +694,21 @@ components.registerScreen =
 `
 
 
-components.forgotPassword = 
-`
+components.forgotPassword =
+    `
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div class="logo-container cursor" onClick="view.setActiveScreen('hotelPage')">
+            <div class="logo-container cursor" onClick = "router.navigate('/hotel')">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
             </div>
             <div class="navigation-wrapper">
             <ul>
-                <li onClick="view.setActiveScreen('hotelPage')"><a>Khách sạn</a></li>
+                <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
                 <li><a>Vé máy bay</a></li>
-                <li onClick="view.setActiveScreen('tourPage')"><a>Tour</a></li>
+                <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
                 <li><a>Cẩm nang</a></li>
                 <div class="login">
                     <div class="logo-login icon-secondary">
