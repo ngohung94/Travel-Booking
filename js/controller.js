@@ -11,21 +11,21 @@ controller.register = (data) => {
       view.setErrorMessage('last-name-error', '')
     }
     if (data.email.trim() === ''){
-      view.setErrorMessage('email-error' , 'Please input email')
+      view.setErrorMessage('email-register-error' , 'Please input email')
     }else {
-      view.setErrorMessage('email-error', '')
+      view.setErrorMessage('email-register-error', '')
     }
     if (data.password.trim() === ''){
-      view.setErrorMessage('password-error' , 'Please input password')
+      view.setErrorMessage('password-register-error' , 'Please input password')
     }else {
-      view.setErrorMessage('password-error', '')
+      view.setErrorMessage('password-register-error', '')
     }
     if (data.confirmPassword.trim() === ''){
-      view.setErrorMessage('confirm-password-error' , 'Please input confirm password')
+      view.setErrorMessage('confirm-password-register-error' , 'Please input confirm password')
     }else if ( data.password !== data.confirmPassword ){
-      view.setErrorMessage('confirm-password-error' , `Password didn't match`)
+      view.setErrorMessage('confirm-password-register-error' , `Password didn't match`)
     }else{
-      view.setErrorMessage('confirm-password-error' , '')
+      view.setErrorMessage('confirm-password-register-error' , '')
     }
     if(data.firstName.trim() !== '' && data.lastName.trim() !== '' && data.email.trim() !== '' && data.password.trim() !== '' && data.confirmPassword.trim() !== '' && data.password.trim() === data.confirmPassword.trim()){
       model.register(data)
@@ -33,14 +33,14 @@ controller.register = (data) => {
   }
 controller.login = (dataLogin) =>{
     if (dataLogin.email.trim() === ''){
-        view.setErrorMessage('email-error' , 'Please input email')
+        view.setErrorMessage('email-login-error' , 'Please input email')
     }else {
-        view.setErrorMessage('email-error', '')
+        view.setErrorMessage('email-login-error', '')
     }
     if (dataLogin.password.trim() === ''){
-        view.setErrorMessage('password-error' , 'Please input password')
+        view.setErrorMessage('password-login-error' , 'Please input password')
     }else {
-        view.setErrorMessage('password-error', '')
+        view.setErrorMessage('password-login-error', '')
     }
     if(dataLogin.email.trim() !== '' && dataLogin.password.trim() !== ''){
         model.login(dataLogin)

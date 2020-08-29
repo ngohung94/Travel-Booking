@@ -54,7 +54,7 @@ components.hotelPage = `
                         <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
                     </ul>
                 </div>
-                <span><a>Login</a></span>
+                <span><a id="itemLogin">Login</a></span>
               </div>
             </ul>
           </div>
@@ -115,11 +115,11 @@ components.hotelPage = `
                 <div class="input-login-wrapper">
                     <div class="input-wrapper1">
                         <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
+                        <div class="error" id="email-login-error"></div>
                     </div>
                     <div class="input-wrapper1">
                         <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
+                        <div class="error" id="password-login-error"></div>
                     </div>
                 </div>
                 <div class="form-action">
@@ -166,7 +166,7 @@ components.innerHotel = `
                 <li id="clickRegister" onClick="view.setActiveScreen('registerScreen')">Register</li>
             </ul>
         </div>
-        <span><a>Login</a></span>
+        <span><a id="itemLogin">Login</a></span>
         </div>
   </ul>
     </div>
@@ -274,11 +274,11 @@ components.innerHotel = `
                 <div class="input-login-wrapper">
                     <div class="input-wrapper1">
                         <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
+                        <div class="error" id="email-login-error"></div>
                     </div>
                     <div class="input-wrapper1">
                         <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
+                        <div class="error" id="password-login-error"></div>
                     </div>
                 </div>
                 <div class="form-action">
@@ -380,11 +380,11 @@ components.tourPage =
                 <div class="input-login-wrapper">
                     <div class="input-wrapper1">
                         <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
+                        <div class="error" id="email-login-error"></div>
                     </div>
                     <div class="input-wrapper1">
                         <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
+                        <div class="error" id="password-login-error"></div>
                     </div>
                 </div>
                 <div class="form-action">
@@ -456,11 +456,11 @@ components.registerScreen =
                 <div class="input-login-wrapper">
                     <div class="input-wrapper1">
                         <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
+                        <div class="error" id="email-login-error"></div>
                     </div>
                     <div class="input-wrapper1">
                         <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
+                        <div class="error" id="password-login-error"></div>
                     </div>
                 </div>
                 <div class="form-action">
@@ -502,15 +502,15 @@ components.registerScreen =
                         </div>
                         <div class="input-wrapper1">
                             <input type="text" placeholder="Email...." name="email">
-                            <div class="error" id="email-error"></div>
+                            <div class="error" id="email-register-error"></div>
                         </div>
                         <div class="input-wrapper1">
                             <input type="password" placeholder="Password...." name="password">
-                            <div class="error" id="password-error"></div>
+                            <div class="error" id="password-register-error"></div>
                         </div>
                         <div class="input-wrapper1">
                             <input type="password" placeholder="Confirm password" name="confirmPassword">
-                            <div class="error" id="confirm-password-error"></div>
+                            <div class="error" id="confirm-password-register-error"></div>
                         </div>
                     </div>
                     <div class="form-action">
@@ -576,11 +576,11 @@ components.forgotPassword =
                 <div class="input-login-wrapper">
                     <div class="input-wrapper1">
                         <input type="text" placeholder="Email...." name="email">
-                        <div class="error" id="email-error"></div>
+                        <div class="error" id="email-login-error"></div>
                     </div>
                     <div class="input-wrapper1">
                         <input type="password" placeholder="Password...." name="password">
-                        <div class="error" id="password-error"></div>
+                        <div class="error" id="password-login-error"></div>
                     </div>
                 </div>
                 <div class="form-action">
@@ -617,7 +617,7 @@ components.forgotPassword =
                 </div>
                 <div>
                     <input class="send-email" name="email" type="text">
-                    <span class="error" id="forgot-email-error"></span>
+                    <span class="error" id="forgot-email-login-error"></span>
                 </div>
                 <p class="">
                     Để đặt lại mật khẩu của mình, hãy nhập địa chỉ email mà bạn sử dụng để đăng nhập

@@ -152,27 +152,27 @@ view.setActiveScreen = (screenName) => {
       })
       break;
     case 'forgotPassword':
-        document.getElementById('app').innerHTML = components.forgotPassword
-        const forgotPass = document.getElementById('forgotPass')
-        forgotPass.addEventListener('submit', (e) => {          
-            e.preventDefault()
-            const emailAddress = forgotPass.email.value;
-            controller.forgotPassword(emailAddress)
-            firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
-              alert('Please access the password reset email')
-              })
+      document.getElementById('app').innerHTML = components.forgotPassword
+      const forgotPass = document.getElementById('forgotPass')
+      forgotPass.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const emailAddress = forgotPass.email.value;
+        controller.forgotPassword(emailAddress)
+        firebase.auth().sendPasswordResetEmail(emailAddress).then(function () {
+          alert('Please access the password reset email')
         })
+      })
       break;
-    }
-    document.getElementById('clickLogin').addEventListener('click', () => {
-      document.getElementById('login').style.display = 'block'
-    })
-    document.getElementById('closeLogin').addEventListener('click', () => {
-      document.getElementById('login').style.display = 'none'
-    })
-    // Login
-    const loginForm = document.getElementById('login-form')
-    loginForm.addEventListener('submit', (e) => {
+  }
+  document.getElementById('clickLogin').addEventListener('click', () => {
+    document.getElementById('login').style.display = 'block'
+  })
+  document.getElementById('closeLogin').addEventListener('click', () => {
+    document.getElementById('login').style.display = 'none'
+  })
+  // Login
+  const loginForm = document.getElementById('login-form')
+  loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
     loginForm.email.value = loginForm.email.value.trim()
     const dataLogin = {
@@ -180,9 +180,9 @@ view.setActiveScreen = (screenName) => {
       password: loginForm.password.value
     }
     controller.login(dataLogin)
-    })
+  })
 }
-  
+
 
 
 view.setErrorMessage = (elementId, message) => {
