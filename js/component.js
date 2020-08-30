@@ -68,7 +68,7 @@ components.hotelPage = `
         <form class="form-wrapper">
           <div class="input-wrapper icon-primary">
             <i class="fa fa-map-marker"></i>
-            <input class="search-input" type="text" placeholder="Nhập tên khách sạn" />
+            <input id="search-input-hotel" class="search-input" type="text" placeholder="Nhập địa danh" />
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-calendar"></i>
