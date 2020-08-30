@@ -13,7 +13,9 @@ body {
     font-weight: 400;
     color: #333;
 }
-
+.fa{
+    color: #dbdbdb;
+}
 /* ----------------Icon-------------------- */
 .icon-primary {
     color: #0c5561;

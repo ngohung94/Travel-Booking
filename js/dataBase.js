@@ -206,13 +206,152 @@ const dataTourFR = [
 
 
 
-/////////////////////////////////// phan code data trip cua anh Tung
-const dataTripsVN = [
-  {
-    src: '../img/img-hotel/dalat.webp',
-    alt: 'da lat',
-    titleTrip: 'Đà Lạt',
-    dataHotels: [
+  /////////////////////////////////// phan code data trip cua anh Tung
+  const dataTripsVN = [
+    {
+      src: '../img/img-hotel/dalat.webp',
+      alt: 'da lat',
+      titleTrip: 'Đà Lạt',
+      dataHotels: [
+        {
+          titleHotel: 'Khách sạn Đà Lạt Palace Heritage',
+          rating: 3,
+          location: '2 Trần Phú, Phường 3, Đà Lạt, Lâm Đồng',
+          imgHotel: '../img/img-hotel/vungtau.webp',
+          contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
+          priceOld: '5,000,000',
+          priceNew: '1,000,000',
+        },
+        {
+          titleHotel: 'Khách sạn Kings',
+          rating: 4,
+          location: '10 Bùi Thị Xuân, Phường 2, Đà Lạt, Lâm Đồng ',
+          imgHotel: '../img/img-hotel/kings.webp',
+          contentSummary: 'được thiết kế theo lối kiến trúc hiện đại, nội thất sang trọng, trang nhã và thoải mái, với tầm nhìn bao quát khung cảnh thành phố đây sẽ là sự lựa chọn thích hợp cho kỳ nghỉ của du khách khi đến với Đà Lạt. Tất cả các phòng đều có gắn máy lạnh.',
+          priceOld: '700,000',
+          priceNew: '400,000',
+        }
+      ]
+    },
+    {
+      src: '../img/img-hotel/nhatrang.webp',
+      alt: 'nha trang',
+      titleTrip: 'Nha Trang',
+      dataHotels: [
+        {
+          titleHotel: 'Khách sạn Nha Trang Palace Heritage',
+          rating: 3,
+          location: ' 60 Trần Phú ,Phường Lộc Thọ, Nha Trang, Khánh Hòa ',
+          imgHotel: '../img/img-hotel/vungtau.webp',
+          contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
+          priceOld: '5,000,000',
+          priceNew: '1,000,000',
+        },
+      ]
+    },
+    {
+      src: '../img/img-hotel/danang.jpg',
+      alt: 'da nang',
+      titleTrip: 'Đà Nẵng',
+      dataHotels: [
+        {
+          titleHotel: ' Khách sạn Sala Đà Nẵng Beach ',
+          rating: 4,
+          location: '36 - 38 Lâm Hoành, Phước Mỹ, Sơn Trà, Đà Nẵng',
+          imgHotel: 'https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/18/UoHA-XfhTGOBeAWa9eKoDA-1.jpeg',
+          contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
+          priceOld: '2,090,000',
+          priceNew: '910,000',
+        },
+      ]
+    },
+  
+    {
+      src: '../img/img-tour/hạ long.jpg',
+      alt: 'ha long',
+      titleTrip: 'Hạ Long'
+    },
+    {
+      src: '../img/img-tour/sapa.jpg',
+      alt: 'sa pa',
+      titleTrip: 'Sa Pa'
+    },
+    {
+      src: '../img/img-tour/phan thiết.jpg',
+      alt: 'phan thiet',
+      titleTrip: 'Phan Thiết'
+    },
+    {
+      src: '../img/img-tour/hà giang.jpg',
+      alt: 'ha giang',
+      titleTrip: 'Hà Giang'
+    },
+    {
+      src: '../img/img-tour/phú quốc.jpg',
+      alt: 'phu quoc',
+      titleTrip: 'Phú Quốc'
+    },
+  ];
+  
+  const dataTripsFR = [
+    {
+      src: '../img/img-tour/thái lan.jpg',
+      alt: 'thai lan',
+      titleTrip: 'Thái Lan'
+    },
+    {
+      src: '../img/img-tour/singapor.jpg',
+      alt: 'singapore',
+      titleTrip: 'Singapore'
+    },
+    {
+      src: '../img/img-tour/trung quốc.jpg',
+      alt: 'trung quoc',
+      titleTrip: 'Trung Quốc'
+    },
+    {
+      src: '../img/img-tour/nhật bản.jpg',
+      alt: 'nhat ban',
+      titleTrip: 'Nhật Bản'
+    },
+    {
+      src: '../img/img-tour/hồng kông.jpg',
+      alt: 'hong kong',
+      titleTrip: 'Hồng Kông'
+    },
+    {
+      src: '../img/img-tour/campuchia.jpg',
+      alt: 'campuchia',
+      titleTrip: 'Campuchia'
+    },
+    {
+      src: '../img/img-tour/phap.jpg',
+      alt: 'phap',
+      titleTrip: 'Pháp'
+    },
+    {
+      src: '../img/img-tour/hàn quốc.jpg',
+      alt: 'han quoc',
+      titleTrip: 'Hàn Quốc'
+    },
+  ];
+  
+  const dataDetailHotel = {
+    dataHeaderTopContent: {
+      titleContent: 'Swiss-Belresort Tuyen Lam Dalat',
+      rating: 4,
+      location: 'Phân khu chức năng 7.8, KDL Hồ Tuyền Lâm, Phường 3, Đà Lạt, Lâm Đồng',
+    },
+    dataImageOverView: {
+      imageLeft: '../img/img-hotel/1.webp',
+      imageRight: [
+        '../img/img-hotel/2.webp',
+        '../img/img-hotel/3.webp',
+        '../img/img-hotel/6.webp',
+        '../img/img-hotel/5.webp',
+      ]
+    },
+    dataOneHotelReview: [
       {
         titleHotel: 'Khách sạn Đà Lạt Palace Heritage',
         rating: 3,
@@ -233,56 +372,60 @@ const dataTripsVN = [
       }
     ]
   },
-  {
-    src: '../img/img-hotel/nhatrang.webp',
-    alt: 'nha trang',
-    titleTrip: 'Nha Trang',
-    dataHotels: [
-      {
-        titleHotel: 'Khách sạn Nha Trang Palace Heritage',
-        rating: 3,
-        location: '2 Trần Phú, Phường 3, Đà Lạt, Lâm Đồng',
-        imgHotel: '../img/img-hotel/vungtau.webp',
-        contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
-        priceOld: '5,000,000',
-        priceNew: '1,000,000',
-      },
 
-    ]
 
-  },
-  {
-    src: '../img/img-hotel/danang.jpg',
-    alt: 'da lat',
-    titleTrip: 'Đà Nẵng'
-  },
 
-  {
-    src: '../img/img-tour/hạ long.jpg',
-    alt: 'ha long',
-    titleTrip: 'Hạ Long'
-  },
-  {
-    src: '../img/img-tour/sapa.jpg',
-    alt: 'sa pa',
-    titleTrip: 'Sa Pa'
-  },
-  {
-    src: '../img/img-tour/phan thiết.jpg',
-    alt: 'phan thiet',
-    titleTrip: 'Phan Thiết'
-  },
-  {
-    src: '../img/img-tour/hà giang.jpg',
-    alt: 'ha giang',
-    titleTrip: 'Hà Giang'
-  },
-  {
-    src: '../img/img-tour/phú quốc.jpg',
-    alt: 'phu quoc',
-    titleTrip: 'Phú Quốc'
-  },
-];
+  //////////////////////////////phần ERROR
+//   {
+//     src: '../img/img-hotel/nhatrang.webp',
+//     alt: 'nha trang',
+//     titleTrip: 'Nha Trang',
+//     dataHotels: [
+//       {
+//         titleHotel: 'Khách sạn Nha Trang Palace Heritage',
+//         rating: 3,
+//         location: '2 Trần Phú, Phường 3, Đà Lạt, Lâm Đồng',
+//         imgHotel: '../img/img-hotel/vungtau.webp',
+//         contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
+//         priceOld: '5,000,000',
+//         priceNew: '1,000,000',
+//       },
+
+//     ]
+
+//   },
+//   {
+//     src: '../img/img-hotel/danang.jpg',
+//     alt: 'da lat',
+//     titleTrip: 'Đà Nẵng'
+//   },
+
+//   {
+//     src: '../img/img-tour/hạ long.jpg',
+//     alt: 'ha long',
+//     titleTrip: 'Hạ Long'
+//   },
+//   {
+//     src: '../img/img-tour/sapa.jpg',
+//     alt: 'sa pa',
+//     titleTrip: 'Sa Pa'
+//   },
+//   {
+//     src: '../img/img-tour/phan thiết.jpg',
+//     alt: 'phan thiet',
+//     titleTrip: 'Phan Thiết'
+//   },
+//   {
+//     src: '../img/img-tour/hà giang.jpg',
+//     alt: 'ha giang',
+//     titleTrip: 'Hà Giang'
+//   },
+//   {
+//     src: '../img/img-tour/phú quốc.jpg',
+//     alt: 'phu quoc',
+//     titleTrip: 'Phú Quốc'
+//   },
+// ];
 
 const dataTripsFR = [
   {
