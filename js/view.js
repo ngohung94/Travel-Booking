@@ -18,7 +18,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
       break;
-         // Detail Hotel Page
+    // Detail Hotel Page
     case 'detailHotelsPage':
       document.getElementById('app').innerHTML = components.detailHotel;
       // console.log(dataTripsVN[idHotel].dataHotels[idDetailHotel].dataDetailHotel)
@@ -26,15 +26,19 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
       break;
+
     case 'tourPage':
       // in ra man trang chu
       document.getElementById('app').innerHTML = components.tourPage;
-      view.showTourVN(dataTripsVN);
+      view.showTourVN(dataTripsVN);  
       view.showTourFR(dataTripsFR);
       break;
     case 'innerTourTrips':
       document.getElementById('app').innerHTML = components.innerTourTrips;
+      view.showTourTripsVN(dataTourVN);
+      view.showTourTripsFR(dataTourFR);
       break;
+
 
     case 'travelGuide':
       document.getElementById('app').innerHTML = components.travelGuide
@@ -96,42 +100,57 @@ view.setErrorMessage = (elementId, message) => {
 //////////////// phần tour
 view.showTourVN = (dataTripsVN) => {
   const commonToursVietnam = document.getElementById("common-tour");
-  let html = "";
   for (let i = 0; i < dataTripsVN.length; i++) {
-    html += `
-        <li class="box-thumbnails">
-          <div class="item-thumbnail">
-            <a onClick="view.setActiveScreen('innerTourTrips')" >
-                <img class = "cursor" style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsVN[i].src}" alt="${dataTripsVN[[i]].alt}">
-                <h3 class="item-name">
-                    <strong class="text-df">${dataTripsVN[i].titleTrip}</strong>
-                </h3>
-            </a>
-          </div>
-        </li>
+    const tourVnWrapper = document.createElement('li');
+    tourVnWrapper.classList.add("box-thumbnails");
+    tourVnWrapper.innerHTML = `
+    <div  class="item-thumbnail">
+              <a>
+                  <img class = "cursor" style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsVN[i].src}" alt="${dataTripsVN[[i]].alt}">
+                  <h3 class="item-name">
+                      <strong class="text-df">${dataTripsVN[i].titleTrip}</strong>
+                  </h3>
+              </a>
+            </div>
     `;
+    tourVnWrapper.addEventListener("click", () => { 
+      const tourInfo = {
+        tourInfoName: `${dataTripsVN[i].titleTrip}`
+      };
+      model.tourInfoName = tourInfo.tourInfoName;
+      // view.setActiveScreen("innerTourTrips");
+      router.navigate('/innertour');
+    })
+    commonToursVietnam.appendChild(tourVnWrapper);
+    
   }
-  commonToursVietnam.innerHTML = html;
 }
 ///////////////
 view.showTourFR = (dataTripsFR) => {
   const commonToursForeign = document.getElementById("foreign-tour");
-  let html = "";
   for (let i = 0; i < dataTripsFR.length; i++) {
-    html += `
-        <li class="box-thumbnails">
-          <div class="item-thumbnail">
-            <a href="#" >
-                <img style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsFR[i].src}" alt="${dataTripsFR[[i]].alt}">
-                <h3 class="item-name">
-                    <strong class="text-df">${dataTripsFR[i].titleTrip}</strong>
-                </h3>
-            </a>
-          </div>
-        </li>
+    const tourWrapper = document.createElement('li')
+    tourWrapper.classList.add('box-thumbnails');
+    tourWrapper.innerHTML = `
+      <div class="item-thumbnail">
+      <a class = "cursor" onClick="view.setActiveScreen('innerTourTrips') " >
+          <img style="width: 287px; height: 218px;" class="img-responsive" src="${dataTripsFR[i].src}" alt="${dataTripsFR[[i]].alt}">
+          <h3 class="item-name">
+              <strong class="text-df">${dataTripsFR[i].titleTrip}</strong>
+          </h3>
+      </a>
+    </div>  
     `;
+    tourWrapper.addEventListener("click", () => {
+      const tourInfo = {
+        tourInfoName: `${dataTripsFR[i].titleTrip}`
+      };
+      model.tourInfoName = tourInfo.tourInfoName;
+      // view.setActiveScreen("innerTourTrips");
+      router.navigate('/innertour');
+    });
+    commonToursForeign.appendChild(tourWrapper);
   }
-  commonToursForeign.innerHTML = html;
 }
 
 
@@ -353,12 +372,61 @@ view.showDetailHotels = () => {
       `
     )
   })
+};
+
+
+view.showTourTripsVN = (dataTourVN, dataTourFR) => {
+  const NameTourVN = document.getElementById("list-tour-available-show");
+  for (let i = 0; i < dataTourVN.length; i++) {
+    if (dataTourVN[i].nameTour === model.tourInfoName) {
+      const nameTourContent = document.getElementById("name-tour");
+      nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
+
+      const tourShowWrapper = document.createElement('div');
+      tourShowWrapper.classList.add("tour-available");
+      tourShowWrapper.innerHTML = `
+           <div class="tour-wrapper">
+              <h3>${dataTourVN[i].title}</h3>
+              <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
+                  src="${dataTourVN[i].scr}" alt="${dataTourVN[i].alt}">
+              <p><span style="font-weight:550;">Ngày khởi hành:</span>${dataTourVN[i].dayStart}</p>
+              <p><span style="font-weight:550;">Thời gian: </span>${dataTourVN[i].timeTour}</p>
+              <p><span style="font-weight:550;">Điểm khởi hành:</span> ${dataTourVN[i].addressStart}</p>
+              <p><span style="font-weight:550;">Phương tiện: </span> ${dataTourVN[i].vehicle}</p>
+              <strong class="price">${dataTourVN[i].price}</strong>
+              <div class="button-price cursor"><button class="btn">Xem tour</button></div>
+           </div>
+           <hr class = "hr-innerTour-style">
+      `;
+      document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
+    }
+  }
 }
 
-// view.showTourTrips = (dataTourVN) => {
-//   const NameTourVN = document.getElementById("list-tour-available-show");
-//   let html = "";
-//   for (let i = 0; i, dataTourVN.length; i++) {
-//     if(dataTourVN[i].)
-//   }
-// }
+view.showTourTripsFR = (dataTourFR) => {
+  const NameTourFR = document.getElementById("list-tour-available-show");
+  for (let i = 0; i < dataTourFR.length; i++) {
+    if (dataTourFR[i].nameTour === model.tourInfoName) {
+      const nameTourContent = document.getElementById("name-tour");
+      nameTourContent.innerText = `Tour đi ${dataTourFR[i].nameTour}`;
+      const tourShowWrapper = document.createElement('div');
+      tourShowWrapper.classList.add("tour-available");
+      tourShowWrapper.innerHTML = `
+           <div class="tour-wrapper">
+              <h3>${dataTourFR[i].title}</h3>
+              <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
+                  src="${dataTourFR[i].scr}" alt="${dataTourFR[i].alt}">
+              <p><span style="font-weight:550;">Ngày khởi hành:</span>${dataTourFR[i].dayStart}</p>
+              <p><span style="font-weight:550;">Thời gian: </span>${dataTourFR[i].timeTour}</p>
+              <p><span style="font-weight:550;">Điểm khởi hành:</span> ${dataTourFR[i].addressStart}</p>
+              <p><span style="font-weight:550;">Phương tiện: </span> ${dataTourFR[i].vehicle}</p>
+              <strong class="price">${dataTourFR[i].price}</strong>
+              <div class="button-price cursor"><button class="btn">Xem tour</button></div>
+           </div>
+           <hr class = "hr-innerTour-style">
+      `;
+      document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
+    }
+  }
+}
+

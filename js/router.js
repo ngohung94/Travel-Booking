@@ -14,6 +14,9 @@ router.on('/hotel', function () {
 router.on('/tour', function () {
     view.setActiveScreen("tourPage");
 }).resolve();
+router.on('/innertour', function () {
+    view.setActiveScreen("innerTourTrips");
+}).resolve();
 
 
 

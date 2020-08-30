@@ -68,22 +68,22 @@ components.hotelPage = `
         <form class="form-wrapper">
           <div class="input-wrapper icon-primary">
             <i class="fa fa-map-marker"></i>
-            <input type="text" placeholder="Nhập tên khách sạn" />
+            <input class = "search-input" type="text" placeholder="Nhập tên khách sạn" />
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-calendar"></i>
-            <input id="date-input1" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
+            <input  id="date-input1" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
               data-dd-theme="leaf" placeholder="Chọn ngày đi" />
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-calendar"></i>
-            <input id="date-input2" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
+            <input  id="date-input2" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
               data-dd-theme="leaf" placeholder="Chọn ngày về" />
           </div>
-          <div class="input-wrapper icon-primary">
-            <i class="fa fa-hotel"></i> <input type="text" placeholder="Nhập số phòng" />
+          <div  class="input-wrapper icon-primary">
+            <i class="fa fa-hotel"></i> <input class = "search-input" type="text" placeholder="Nhập số phòng" />
           </div>
-          <div class="btn-wrapper">
+          <div class = "search-input" class="btn-wrapper">
             <button class="btn btn-primary">Tìm khách sạn</button>
           </div>
         </form>
@@ -559,7 +559,7 @@ components.innerTourTrips = `
     </div>
 
     <div class="aside-right">
-        <h1>TOUR ĐI ....</h1>
+        <h1 id = "name-tour">TOUR ĐI ....</h1>
         <ul class="tour-chosen-items">
             <li class="tour-items-hover cursor">Phổ biến nhất</li>
             <li class="tour-items-hover cursor">Giá</li>
@@ -571,20 +571,8 @@ components.innerTourTrips = `
         <hr class="hr-innerTour-style">
 
         <div id="list-tour-available-show">
-            <div class="tour-available">
-                <div class="tour-wrapper">
-                    <h3>Tham quan Bình Ba - Quốc Đảo Tôm Hùm 1 ngày</h3>
-                    <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
-                        src="../img/img-tour/img-innerTour/Tour Nha Trang/bình ba, đảo tôm hùm.jpg" alt="Not found">
-                    <p><span style="font-weight:550;">Ngày khởi hành:</span> hằng ngày</p>
-                    <p><span style="font-weight:550;">Thời gian: </span></p>
-                    <p><span style="font-weight:550;">Điểm khởi hành:</span> Khánh Hoà</p>
-                    <p><span style="font-weight:550;">Phương tiện: </span> ô tô, Máy bay</p>
-                    <strong class="price">280,000đ</strong>
-                    <div class="button-price cursor"><button class="btn">Xem tour</button></div>
-                </div>
-            </div>
-            <hr>
+            
+            
             
         </div>
     </div>

@@ -1,4 +1,5 @@
 const model = {}
+model.tourInfoName='';
 model.register = async (data) => {
     try {
         await firebase.auth().createUserWithEmailAndPassword(data.email, data.password)

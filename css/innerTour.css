@@ -1,5 +1,10 @@
 
 /* /////////// Phần style innerTourTrips */
+#name-tour{
+    color: #00adef;
+    font-weight: 700;
+    font-size: 25px;
+}
 .innerTourContainer{
    /* text-align: center; */
    margin: auto;
@@ -10,17 +15,16 @@
 }
 
 .hr-innerTour-style{
-    margin: 10px 0;
+    margin: 20px 0;
     
 }
-/* .innerTourContainer .home-page-tour{
-    text-align: center;
-} */
+.innerTourContainer .home-page-tour{
+    margin: 10px 0;
+}
 
 
 .innerTourContainer .box-tour-main{
     display: flex;
-    /* justify-content: center; */
 }
 /* phan aside-left */
 .aside-left .category-hotel .left-main-content-hotel{
