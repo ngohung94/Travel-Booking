@@ -80,20 +80,29 @@ const dataTourVN = [
         {
           titleHotel: 'Khách sạn Nha Trang Palace Heritage',
           rating: 3,
-          location: '2 Trần Phú, Phường 3, Đà Lạt, Lâm Đồng',
+          location: ' 60 Trần Phú ,Phường Lộc Thọ, Nha Trang, Khánh Hòa ',
           imgHotel: '../img/img-hotel/vungtau.webp',
           contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
           priceOld: '5,000,000',
           priceNew: '1,000,000',
         },
-  
       ]
-  
     },
     {
       src: '../img/img-hotel/danang.jpg',
-      alt: 'da lat',
-      titleTrip: 'Đà Nẵng'
+      alt: 'da nang',
+      titleTrip: 'Đà Nẵng',
+      dataHotels: [
+        {
+          titleHotel: ' Khách sạn Sala Đà Nẵng Beach ',
+          rating: 4,
+          location: '36 - 38 Lâm Hoành, Phước Mỹ, Sơn Trà, Đà Nẵng',
+          imgHotel: 'https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/18/UoHA-XfhTGOBeAWa9eKoDA-1.jpeg',
+          contentSummary: "tọa lạc tại 12 Trần Phú một trong những con đường đẹp nhất thành phố Ngàn Hoa. Khách sạn này được các kiến trúc sư người Pháp thiết kế. Và xây dựng năm 1916, năm 1922 với tên gọi ...",
+          priceOld: '2,090,000',
+          priceNew: '910,000',
+        },
+      ]
     },
   
     {

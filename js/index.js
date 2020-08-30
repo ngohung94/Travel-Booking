@@ -12,6 +12,7 @@ const init = () => {
   firebase.initializeApp(firebaseConfig);
 
   firebase.auth().onAuthStateChanged(function (user) {
+    view.setActiveScreen('hotelPage')
     if (user) {
       // User is signed in.
       if (user.emailVerified) {
@@ -26,7 +27,8 @@ const init = () => {
           e.preventDefault()
           firebase.auth().signOut().then(() => {
             alert("Sign-out successful.")
-            view.setActiveScreen('hotelPage')
+            model.currentUser = undefined
+            router.navigate('#')
           })
         })
         document.querySelector('.drop-downs-login ul').appendChild(logOut)
@@ -37,6 +39,7 @@ const init = () => {
         document.getElementById('email-error').innerText = 'Please verify your email'
       }
     }
+    
   });
 }
 window.onload = init;

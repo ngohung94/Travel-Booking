@@ -36,9 +36,9 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       document.getElementById('app').innerHTML = components.innerTourTrips;
       break;
 
-    case 'travelGuide':
-      document.getElementById('app').innerHTML = components.travelGuide
-      break;
+    // case 'travelGuide':
+    //   document.getElementById('app').innerHTML = components.travelGuide
+    //   break;
     case 'registerScreen':
       document.getElementById('app').innerHTML = components.registerScreen
       const registerForm = document.getElementById('register-form')
@@ -67,6 +67,8 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       })
       break;
   }
+  
+  view.checkLogin()
   document.getElementById('clickLogin').addEventListener('click', () => {
     document.getElementById('login').style.display = 'block'
   })
@@ -86,8 +88,26 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
   })
 }
 
+view.checkLogin = () => {
+    if(model.currentUser){
+      const logOut = document.createElement('li')
+      logOut.id = "logOut"
+      logOut.innerText = `Log Out`
+      logOut.addEventListener("click", (e) => {
+        e.preventDefault()
+        firebase.auth().signOut().then(() => {
+          model.currentUser = undefined
+          alert("Sign-out successful.")
+          router.navigate('#')
+        })
+      })
+      document.querySelector('.drop-downs-login ul').appendChild(logOut)
+      document.getElementById('itemLogin').innerText = `${model.currentUser.displayName}`
+      document.getElementById('clickLogin').style.display = "none"
+      document.getElementById('clickRegister').style.display = "none"
+    }
 
-
+}
 view.setErrorMessage = (elementId, message) => {
   document.getElementById(elementId).innerText = message
 }
@@ -181,7 +201,6 @@ view.showTripsFR = (dataTripsFR) => {
 // Show all hotels
 view.showAllHotels = (dataHotels) => {
   const rightMainContent = document.getElementById('right-main-content');
-
   rightMainContent.innerHTML = dataHotels.map((ele, idx) => {
     console.log(idx);
     let rating = ele.rating;
@@ -289,7 +308,7 @@ view.showDetailHotels = () => {
   oneHotelReview.innerHTML = dataDetailHotel.dataOneHotelReview.map((ele, idx) => {
     return (
       `
-      <div class="info-one-hotel">
+      <form id="putHotelForm" class="info-one-hotel">
         <div class="info-left">
           <div class="image-cover">
             <img src="${ele.imgCover}" alt="">
@@ -344,21 +363,18 @@ view.showDetailHotels = () => {
               ${ele.newPrice} đ
             </div>
           </div>
-          <div class="btn booking">
+          <button type="submit" class="btn booking">
             Đặt ngay
-          </div>
+          </button>
         </div>
-      </div>
-    
+      </form>
       `
     )
   })
 }
 
-// view.showTourTrips = (dataTourVN) => {
-//   const NameTourVN = document.getElementById("list-tour-available-show");
-//   let html = "";
-//   for (let i = 0; i, dataTourVN.length; i++) {
-//     if(dataTourVN[i].)
-//   }
-// }
+
+let put = document.getElementById('putHotelForm')
+put.addEventListener('submit', (data) => {
+  
+})

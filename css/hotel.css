@@ -8,8 +8,8 @@
 }
 
 #myVideo {
-  min-width: 100%;
-  max-width: 100%;
+  /* min-width: 100%;
+  max-width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
@@ -217,6 +217,10 @@
   animation: moveInRight 1s ease-out 0.7s;
 }
 
+.header-content .form-wrapper .input-wrapper {
+  display: flex;
+  align-items: center;
+}
 .header-content .form-wrapper input {
   margin-left: 1rem;
 }
@@ -226,12 +230,16 @@
 }
 
 .header-content .form-wrapper input#date-input1,
-.header-content .form-wrapper input#date-input2 {
-  width: 12rem;
+.header-content .form-wrapper input#date-input2,
+.header-content .form-wrapper .search-input {
+  width: 16rem;
 }
 
 .header-content .form-wrapper:first-child {
   width: 10rem;
+}
+.header-content .form-wrapper .input-wrapper i{
+  width: 20px;
 }
 
 /*-----------------Animation move-----------------*/
@@ -371,13 +379,16 @@
 }
 /*-----------------Content-Wrapper---------------*/
 
-@media screen and (max-width : 768px)  {
+@media screen and (max-width : 767.98px)  {
   html {     
           font-size: 7px;
   }
   .header-bottom{
       display: flex;
       flex-direction: column;
+  }
+  .header-content {
+    margin-top:0
   }
   .header-content .heading {
       font-size: 1rem;
@@ -389,8 +400,45 @@
       flex-direction: column;
       align-items: flex-start;
   }
-  .header-content .form-wrapper input#date-input1, .header-content .form-wrapper input#date-input2 {
-      width: 100%;
+  .header-content .form-wrapper .input-wrapper {
       margin: 10px;
+  }
+  .form-wrapper .input-wrapper input#date-input1{
+    margin-left: 10px;
+  }
+  .header-content .form-wrapper .input-wrapper input#date-input1 ,
+  .header-content .form-wrapper input#date-input2,
+  .header-content .form-wrapper .search-input{
+    width: 30rem;
+  }
+  .header-content .form-wrapper .input-wrapper i{
+    width: 22px;
+  }
+  .common-trips-wrapper .common-trip .info-trip{
+    background: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .header-content {
+    margin-top:0
+  }
+  .header-content .form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-content .form-wrapper .input-wrapper {
+    margin: 10px;
+  }
+  .form-wrapper .input-wrapper input#date-input1{
+    margin-left: 10px;
+  }
+  .header-content .form-wrapper .input-wrapper input#date-input1 ,
+  .header-content .form-wrapper input#date-input2,
+  .header-content .form-wrapper .search-input{
+    width: 30rem;
+  }
+  .header-content .form-wrapper .input-wrapper i{
+    width: 22px;
   }
 }
