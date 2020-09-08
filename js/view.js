@@ -76,7 +76,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataTourVN[i].tileTrip)
             // removeVietnameseTones(dataSearch)
             if (dataSearch == dataTourVN[i].nameTour){
-                view.setActiveScreen('innerTourTrips',i)
+                view.setActiveScreen('innerTourTrips',i);
             }
           }
           for ( i = 0 ; i < dataTourFR.length ; i++){

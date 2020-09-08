@@ -12,7 +12,8 @@ model.register = async (data) => {
         view.setActiveScreen('homePageScreen')
         } catch(err) {
         console.log(err)
-        alert(err.message)
+        // alert(err.message) 
+        document.getElementById('email-register-error').innerText =   err.message;
         }          
 }
 model.login = async (dataLogin) => {
