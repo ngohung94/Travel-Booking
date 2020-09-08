@@ -35,18 +35,12 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsVN[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
-            }else {
-              view.setActiveScreen('notFound')
-            }
           }
           for ( i = 0 ; i < dataTripsFR.length ; i++){
             // removeVietnameseTones(dataTripsFR[i].tileTrip)
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsFR[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
-            }else {
-              view.setActiveScreen('notFound')
-            }
         }
         })
       break;
@@ -81,18 +75,12 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch == dataTourVN[i].nameTour){
                 view.setActiveScreen('innerTourTrips',i)
-            }else {
-              view.setActiveScreen('notFound')
-            }
           }
           for ( i = 0 ; i < dataTourFR.length ; i++){
             // removeVietnameseTones(dataTourFR[i].tileTrip)
             // removeVietnameseTones(dataSearch)
             if (dataSearch == dataTourFR[i].nameTour){
                 view.setActiveScreen('innerTourTrips',i)
-            }else {
-              view.setActiveScreen('notFound')
-            }
           }
         })
       break;
