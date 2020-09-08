@@ -34,6 +34,7 @@
 #list-tour-available-show .tour-available{
     color: #00adef;
     margin-bottom: 30px;
+    display: none;
 }
 .tour-available .tour-wrapper h3{
     font-size: 20px;

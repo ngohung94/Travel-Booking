@@ -4,6 +4,8 @@
 
 .tour-container .tour-img{
     /* text-align: center; */
+    display: flex;
+    justify-content: center;
     background-image: url("../img/div-tour.jpg");
     height: 300px;      
     color: #ffffff; 
@@ -12,13 +14,13 @@
 }
 .tour-container .tour-img .aside-mid{
     height: 150px;
-    width: 46,66%;
+    /* width: 46,66%; */
     background-color:rgba(21, 130, 219, 0.7);
     position: absolute;
     border-radius: 10px;
-    top: 70px;
+    /* top: 70px;
     left: 25%;
-    right: 25%;
+    right: 25%; */
     padding-top: 30px;
     padding-left: 15px;
     padding-right: 15px;
@@ -143,6 +145,9 @@ footer .footer-container .tour-country{
 @media only screen and (min-width: 740px) and (max-width: 1323px){
     #tour-search-content{
         font-size: 15px;
+    }
+    .aside-mid{
+        width: 548px;
     }
 }
 @media only screen and (max-width: 739px ){

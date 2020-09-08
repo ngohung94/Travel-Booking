@@ -37,9 +37,9 @@ model.login = async (dataLogin) => {
     } catch(err){
         console.log(err)
         if (err.code == 'auth/user-not-found' || err.code == 'auth/invalid-email') {
-            document.getElementById('email-error').innerText  = `${err.message}`
+            document.getElementById('email-login-error').innerText  = `${err.message}`
         } else if (err.code == 'auth/wrong-password') {
-        document.getElementById('password-error').innerText  = `${err.message}`
+        document.getElementById('password-login-error').innerText  = `${err.message}`
         }
     }
 }

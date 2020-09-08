@@ -9,6 +9,46 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       view.showTripsFR(dataTripsFR);
       $('#date-input1').dateDropper();
       $('#date-input2').dateDropper();
+      // function removeVietnameseTones(item) {
+      //   item = item.toLowerCase();
+      //   item = item.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
+      //   item = item.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
+      //   item = item.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
+      //   item = item.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o');
+      //   item = item.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
+      //   item = item.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
+      //   item = item.replace(/đ/g, 'd');
+      //   return item;
+      //   }
+      let searchHotel = document.querySelector('.form-wrapper')
+        searchHotel.addEventListener('submit', (e) => {
+          e.preventDefault()
+          const dataSearch = {
+            place : searchHotel.place.value,
+            departureDate : searchHotel.departureDate.value,
+            returnDate : searchHotel.returnDate.value,
+            roomNumber : searchHotel.roomNumber.value
+          }
+          console.log(dataSearch);
+          for ( i = 0 ; i < dataTripsVN.length ; i++){
+            // removeVietnameseTones(dataTripsVN[i].tileTrip)
+            // removeVietnameseTones(dataSearch)
+            if (dataSearch.place == dataTripsVN[i].titleTrip){
+                view.setActiveScreen('innerHotelPage',i)
+            }else {
+              view.setActiveScreen('notFound')
+            }
+          }
+          for ( i = 0 ; i < dataTripsFR.length ; i++){
+            // removeVietnameseTones(dataTripsFR[i].tileTrip)
+            // removeVietnameseTones(dataSearch)
+            if (dataSearch.place == dataTripsFR[i].titleTrip){
+                view.setActiveScreen('innerHotelPage',i)
+            }else {
+              view.setActiveScreen('notFound')
+            }
+        }
+        })
       break;
 
     // Inner Hotel Page
@@ -30,8 +70,31 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
     case 'tourPage':
       // in ra man trang chu
       document.getElementById('app').innerHTML = components.tourPage;
-      view.showTourVN(dataTripsVN);  
+      view.showTourVN(dataTripsVN);
       view.showTourFR(dataTripsFR);
+      let searchTour = document.querySelector('#tour-search')
+        searchTour.addEventListener('submit', (e) => {
+          e.preventDefault()
+          const dataSearch =  searchTour.place.value
+          for ( i = 0 ; i < dataTourVN.length ; i++){
+            // removeVietnameseTones(dataTourVN[i].tileTrip)
+            // removeVietnameseTones(dataSearch)
+            if (dataSearch == dataTourVN[i].nameTour){
+                view.setActiveScreen('innerTourTrips',i)
+            }else {
+              view.setActiveScreen('notFound')
+            }
+          }
+          for ( i = 0 ; i < dataTourFR.length ; i++){
+            // removeVietnameseTones(dataTourFR[i].tileTrip)
+            // removeVietnameseTones(dataSearch)
+            if (dataSearch == dataTourFR[i].nameTour){
+                view.setActiveScreen('innerTourTrips',i)
+            }else {
+              view.setActiveScreen('notFound')
+            }
+          }
+        })
       break;
     case 'innerTourTrips':
       document.getElementById('app').innerHTML = components.innerTourTrips;
@@ -69,8 +132,11 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
         })
       })
       break;
+      case 'notFound':
+      document.getElementById('app').innerHTML = components.notFound
+      break;
   }
-  
+
   view.checkLogin()
   document.getElementById('clickLogin').addEventListener('click', () => {
     document.getElementById('login').style.display = 'block'
@@ -92,23 +158,23 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
 }
 
 view.checkLogin = () => {
-    if(model.currentUser){
-      const logOut = document.createElement('li')
-      logOut.id = "logOut"
-      logOut.innerText = `Log Out`
-      logOut.addEventListener("click", (e) => {
-        e.preventDefault()
-        firebase.auth().signOut().then(() => {
-          model.currentUser = undefined
-          alert("Sign-out successful.")
-          router.navigate('#')
-        })
+  if (model.currentUser) {
+    const logOut = document.createElement('li')
+    logOut.id = "logOut"
+    logOut.innerText = `Log Out`
+    logOut.addEventListener("click", (e) => {
+      e.preventDefault()
+      firebase.auth().signOut().then(() => {
+        model.currentUser = undefined
+        alert("Sign-out successful.")
+        router.navigate('#')
       })
-      document.querySelector('.drop-downs-login ul').appendChild(logOut)
-      document.getElementById('itemLogin').innerText = `${model.currentUser.displayName}`
-      document.getElementById('clickLogin').style.display = "none"
-      document.getElementById('clickRegister').style.display = "none"
-    }
+    })
+    document.querySelector('.drop-downs-login ul').appendChild(logOut)
+    document.getElementById('itemLogin').innerText = `${model.currentUser.displayName}`
+    document.getElementById('clickLogin').style.display = "none"
+    document.getElementById('clickRegister').style.display = "none"
+  }
 
 }
 view.setErrorMessage = (elementId, message) => {
@@ -132,7 +198,7 @@ view.showTourVN = (dataTripsVN) => {
               </a>
             </div>
     `;
-    tourVnWrapper.addEventListener("click", () => { 
+    tourVnWrapper.addEventListener("click", () => {
       const tourInfo = {
         tourInfoName: `${dataTripsVN[i].titleTrip}`
       };
@@ -141,7 +207,7 @@ view.showTourVN = (dataTripsVN) => {
       router.navigate('/innertour');
     })
     commonToursVietnam.appendChild(tourVnWrapper);
-    
+
   }
 }
 ///////////////
@@ -173,13 +239,13 @@ view.showTourFR = (dataTripsFR) => {
 }
 
 
-// Show common trips Viet Nam
+/////////////// Show common trips Viet Nam
 view.showTripsVN = (dataTripsVN) => {
   const commonTripsVietnam = document.getElementById('common-trips-vietnam');
   commonTripsVietnam.innerHTML = dataTripsVN.map((ele, id) => {
     return (
       `
-      <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage', ${id})">
+      <div class="common-trip" onClick="view.setActiveScreen('innerHotelPage', ${id})" >
         <div class="img-trip">
           <img src="${ele.src}" alt="${ele.alt}">
       </div>
@@ -220,7 +286,7 @@ view.showTripsFR = (dataTripsFR) => {
 view.showAllHotels = (dataHotels) => {
   const rightMainContent = document.getElementById('right-main-content');
   rightMainContent.innerHTML = dataHotels.map((ele, idx) => {
-    console.log(idx);
+    // console.log(idx);
     let rating = ele.rating;
     let elementRating = document.createElement('span');
     elementRating.className = 'fa fa-star checked';
@@ -232,14 +298,14 @@ view.showAllHotels = (dataHotels) => {
     return (
       `
     <div class="one-hotel">
-      <h2 class="title-hotel">${ele.titleHotel} ${ratingWrapper.map((ele) => ele.outerHTML).join('')}</h2>
+      <h2 class="title-hotel cursor"  onClick="view.setActiveScreen('detailHotelsPage', ${idx})">${ele.titleHotel} ${ratingWrapper.map((ele) => ele.outerHTML).join('')}</h2>
       <div class="location">
         <span><i class="fa fa-map-marker" aria-hidden="true"></i>
         </span>
         <h6 class="subtitle1">${ele.location}</h6>
         <span>(Xem bản đồ)</span>
       </div>
-      <div class="info-hotel">
+      <div class="info-hotel cursor" onClick="view.setActiveScreen('detailHotelsPage', ${idx})">
         <div class="img-hotel">
           <img src="${ele.imgHotel}" alt="phan thiet">
         </div>
@@ -333,7 +399,7 @@ view.showDetailHotels = () => {
           </div>
           <div class="info-hotel">
             <div class="name-hotel">
-              <h3>${ele.nameHotel}</h3>
+              <h3 class="roomName">${ele.nameHotel}</h3>
             </div>
             <div class="one-info-row row-first">
               <span><i class="fa fa-arrows-h" aria-hidden="true"></i>
@@ -377,7 +443,7 @@ view.showDetailHotels = () => {
             <div class="old-price">
               <del>${ele.oldPrice} đ</del>
             </div>
-            <div class="new-price">
+            <div class="new-price" name="priceRoom">
               ${ele.newPrice} đ
             </div>
           </div>
@@ -395,14 +461,27 @@ view.showDetailHotels = () => {
 view.showTourTripsVN = (dataTourVN, dataTourFR) => {
   const NameTourVN = document.getElementById("list-tour-available-show");
   for (let i = 0; i < dataTourVN.length; i++) {
-    if (dataTourVN[i].nameTour === model.tourInfoName) {
-      const nameTourContent = document.getElementById("name-tour");
-      nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
 
-      const tourShowWrapper = document.createElement('div');
-      tourShowWrapper.classList.add("tour-available");
+    const nameTourContent = document.getElementById("name-tour");
+
+
+    const tourShowWrapper = document.createElement('div');
+    tourShowWrapper.classList.add("tour-available");
+    if (dataTourVN[i].title == undefined) {
+      tourShowWrapper.innerHTML = `
+        <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
+        src="../img/img-tour/img-innerTour/img-no-data-found.jpg" alt="${dataTourVN[i].alt}">
+        `;
+      document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
+    }
+    if (dataTourVN[i].nameTour === model.tourInfoName) {
+      nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
+      document.getElementsByClassName("tour-available")[i].style.display = 'block';
+    }
+    else {
       tourShowWrapper.innerHTML = `
            <div class="tour-wrapper">
+             <a class = "" href=""></a>
               <h3>${dataTourVN[i].title}</h3>
               <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
                   src="${dataTourVN[i].scr}" alt="${dataTourVN[i].alt}">
@@ -417,6 +496,8 @@ view.showTourTripsVN = (dataTourVN, dataTourFR) => {
       `;
       document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
     }
+
+
   }
 }
 
@@ -448,7 +529,3 @@ view.showTourTripsFR = (dataTourFR) => {
 }
 
 
-let put = document.getElementById('putHotelForm')
-put.addEventListener('submit', (data) => {
-  
-})

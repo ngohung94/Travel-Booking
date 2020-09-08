@@ -233,6 +233,7 @@
 .header-content .form-wrapper input#date-input2,
 .header-content .form-wrapper .search-input {
   width: 16rem;
+  
 }
 
 .header-content .form-wrapper:first-child {
@@ -377,6 +378,8 @@
   line-height: 5rem;
   font-size: 1.4rem;
 }
+
+
 /*-----------------Content-Wrapper---------------*/
 
 @media screen and (max-width : 767.98px)  {
