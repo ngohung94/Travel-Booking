@@ -66,7 +66,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
     case 'tourPage':
       // in ra man trang chu
       document.getElementById('app').innerHTML = components.tourPage;
-      view.showTourVN(dataTripsVN);  
+      view.showTourVN(dataTripsVN);
       view.showTourFR(dataTripsFR);
       let searchTour = document.querySelector('#tour-search')
         searchTour.addEventListener('submit', (e) => {
@@ -125,7 +125,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       })
       break;
   }
-  
+
   view.checkLogin()
   document.getElementById('clickLogin').addEventListener('click', () => {
     document.getElementById('login').style.display = 'block'
@@ -147,23 +147,23 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
 }
 
 view.checkLogin = () => {
-    if(model.currentUser){
-      const logOut = document.createElement('li')
-      logOut.id = "logOut"
-      logOut.innerText = `Log Out`
-      logOut.addEventListener("click", (e) => {
-        e.preventDefault()
-        firebase.auth().signOut().then(() => {
-          model.currentUser = undefined
-          alert("Sign-out successful.")
-          router.navigate('#')
-        })
+  if (model.currentUser) {
+    const logOut = document.createElement('li')
+    logOut.id = "logOut"
+    logOut.innerText = `Log Out`
+    logOut.addEventListener("click", (e) => {
+      e.preventDefault()
+      firebase.auth().signOut().then(() => {
+        model.currentUser = undefined
+        alert("Sign-out successful.")
+        router.navigate('#')
       })
-      document.querySelector('.drop-downs-login ul').appendChild(logOut)
-      document.getElementById('itemLogin').innerText = `${model.currentUser.displayName}`
-      document.getElementById('clickLogin').style.display = "none"
-      document.getElementById('clickRegister').style.display = "none"
-    }
+    })
+    document.querySelector('.drop-downs-login ul').appendChild(logOut)
+    document.getElementById('itemLogin').innerText = `${model.currentUser.displayName}`
+    document.getElementById('clickLogin').style.display = "none"
+    document.getElementById('clickRegister').style.display = "none"
+  }
 
 }
 view.setErrorMessage = (elementId, message) => {
@@ -187,7 +187,7 @@ view.showTourVN = (dataTripsVN) => {
               </a>
             </div>
     `;
-    tourVnWrapper.addEventListener("click", () => { 
+    tourVnWrapper.addEventListener("click", () => {
       const tourInfo = {
         tourInfoName: `${dataTripsVN[i].titleTrip}`
       };
@@ -196,7 +196,7 @@ view.showTourVN = (dataTripsVN) => {
       router.navigate('/innertour');
     })
     commonToursVietnam.appendChild(tourVnWrapper);
-    
+
   }
 }
 ///////////////
@@ -228,7 +228,7 @@ view.showTourFR = (dataTripsFR) => {
 }
 
 
-// Show common trips Viet Nam
+/////////////// Show common trips Viet Nam
 view.showTripsVN = (dataTripsVN) => {
   const commonTripsVietnam = document.getElementById('common-trips-vietnam');
   commonTripsVietnam.innerHTML = dataTripsVN.map((ele, id) => {
@@ -450,14 +450,27 @@ view.showDetailHotels = () => {
 view.showTourTripsVN = (dataTourVN, dataTourFR) => {
   const NameTourVN = document.getElementById("list-tour-available-show");
   for (let i = 0; i < dataTourVN.length; i++) {
-    if (dataTourVN[i].nameTour === model.tourInfoName) {
-      const nameTourContent = document.getElementById("name-tour");
-      nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
 
-      const tourShowWrapper = document.createElement('div');
-      tourShowWrapper.classList.add("tour-available");
+    const nameTourContent = document.getElementById("name-tour");
+
+
+    const tourShowWrapper = document.createElement('div');
+    tourShowWrapper.classList.add("tour-available");
+    if (dataTourVN[i].title == undefined) {
+      tourShowWrapper.innerHTML = `
+        <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
+        src="../img/img-tour/img-innerTour/img-no-data-found.jpg" alt="${dataTourVN[i].alt}">
+        `;
+      document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
+    }
+    if (dataTourVN[i].nameTour === model.tourInfoName) {
+      nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
+      document.getElementsByClassName("tour-available")[i].style.display = 'block';
+    }
+    else {
       tourShowWrapper.innerHTML = `
            <div class="tour-wrapper">
+             <a class = "" href=""></a>
               <h3>${dataTourVN[i].title}</h3>
               <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
                   src="${dataTourVN[i].scr}" alt="${dataTourVN[i].alt}">
@@ -472,6 +485,8 @@ view.showTourTripsVN = (dataTourVN, dataTourFR) => {
       `;
       document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
     }
+
+
   }
 }
 
@@ -502,9 +517,4 @@ view.showTourTripsFR = (dataTourFR) => {
   }
 }
 
-
-
-// document.getElementById('search-input-hotel').addEventListener("keyup", (e) => {
-
-// })
 
