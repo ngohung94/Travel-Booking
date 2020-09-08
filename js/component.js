@@ -68,24 +68,24 @@ components.hotelPage = `
         <form class="form-wrapper">
           <div class="input-wrapper icon-primary">
             <i class="fa fa-map-marker"></i>
-            <input id="search-input-hotel" class="search-input" type="text" placeholder="Nhập địa danh" />
+            <input id="search-input-hotel" class="search-input" type="text" placeholder="Nhập địa danh" name="place"/>
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-calendar"></i>
             <input  id="date-input1" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
-              data-dd-theme="leaf" placeholder="Chọn ngày đi" />
+              data-dd-theme="leaf" placeholder="Chọn ngày đi" name="departureDate" />
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-calendar"></i>
             <input  id="date-input2" data-dd-large="true" data-dd-large-default="true" data-lock="from" type='text'
-              data-dd-theme="leaf" placeholder="Chọn ngày về" />
+              data-dd-theme="leaf" placeholder="Chọn ngày về" name="returnDate" />
           </div>
           <div class="input-wrapper icon-primary">
             <i class="fa fa-hotel"></i> 
-            <input class="search-input" type="text" placeholder="Nhập số phòng" />
+            <input class="search-input" type="text" placeholder="Nhập số phòng" name="roomNumber" />
           </div>
           <div class="btn-wrapper search-input">
-            <button class="btn btn-primary">Tìm khách sạn</button>
+            <button class="btn btn-primary" type="submit">Tìm khách sạn</button>
           </div>
         </form>
       </div>
@@ -146,7 +146,7 @@ components.innerHotel = `
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
+            <div onClick = "router.navigate('#')" class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
@@ -360,7 +360,7 @@ components.tourPage =
     <div class="aside-mid">
         <form id="tour-search">
             <div id="tour-search-content">Bạn muốn đi du lịch ở đâu?</div>
-            <input style = "padding-left: 10px;" type="text" placeholder="Nhập địa danh">
+            <input style = "padding-left: 10px;" type="text" placeholder="Nhập địa danh" name="place">
             <div id="tour-search-submit">
                 <button class="btn cursor" type="submit">tìm Tour</button>
             </div>

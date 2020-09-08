@@ -364,13 +364,85 @@ const dataTourFR = [
       },
       {
         imgCover: '../img/img-hotel/zoom1.webp',
-        nameHotel: 'Deluxe Twin Mountain View',
+        nameHotel: 'Deluxe King Golf View',
+        area: 35,
+        beds: 2,
+        view: 'Hướng hồ bơi',
+        discount: 69,
+        oldPrice: '1,139,000',
+        newPrice: '1,000,000'
+      },
+    ],
+    dataHeaderTopContent: {
+      titleContent: 'Khách sạn Nha Trang Palace Heritage',
+      rating: 4,
+      location: '60 Trần Phú ,Phường Lộc Thọ, Nha Trang, Khánh Hòa ',
+    },
+    dataImageOverView: {
+      imageLeft: '../img/img-hotel/1.webp',
+      imageRight: [
+        '../img/img-hotel/2.webp',
+        '../img/img-hotel/3.webp',
+        '../img/img-hotel/6.webp',
+        '../img/img-hotel/5.webp',
+      ]
+    },
+    dataOneHotelReview: [
+      {
+        imgCover: '../img/img-hotel/zoom1.webp',
+        nameHotel: 'Deluxe',
         area: 35,
         beds: 2,
         view: 'Hướng vườn',
         discount: 69,
         oldPrice: '1,000,000',
         newPrice: '500,000'
+      },
+      {
+        imgCover: '../img/img-hotel/zoom1.webp',
+        nameHotel: 'Grand Deluxe King/Twin Ocean View',
+        area: 35,
+        beds: 2,
+        view: 'Hướng hồ bơi',
+        discount: 69,
+        oldPrice: '1,139,000',
+        newPrice: '1,000,000'
+      },
+    ],
+    dataHeaderTopContent: {
+      titleContent: 'Khách sạn Sala Đà Nẵng Beach',
+      rating: 4,
+      location: '36 - 38 Lâm Hoành, Phước Mỹ, Sơn Trà, Đà Nẵng',
+    },
+    dataImageOverView: {
+      imageLeft: '../img/img-hotel/1.webp',
+      imageRight: [
+        '../img/img-hotel/2.webp',
+        '../img/img-hotel/3.webp',
+        '../img/img-hotel/6.webp',
+        '../img/img-hotel/5.webp',
+      ]
+    },
+    dataOneHotelReview: [
+      {
+        imgCover: '../img/img-hotel/zoom1.webp',
+        nameHotel: 'Superior Giường king',
+        area: 35,
+        beds: 2,
+        view: 'Hướng biển',
+        discount: 69,
+        oldPrice: '1,000,000',
+        newPrice: '500,000'
+      },
+      {
+        imgCover: '../img/img-hotel/zoom1.webp',
+        nameHotel: 'Junior Suite',
+        area: 35,
+        beds: 2,
+        view: 'Hướng phố',
+        discount: 69,
+        oldPrice: '1,139,000',
+        newPrice: '1,000,000'
       },
     ]
   }
