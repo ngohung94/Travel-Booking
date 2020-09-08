@@ -10,7 +10,7 @@ const init = () => {
     measurementId: "G-2QEK899VD3"
   };
   firebase.initializeApp(firebaseConfig);
-
+// 
   firebase.auth().onAuthStateChanged(function (user) {
     view.setActiveScreen('hotelPage')
     if (user) {
