@@ -35,6 +35,8 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsVN[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
+            }else {
+              view.setActiveScreen('notFound')
             }
           }
           for ( i = 0 ; i < dataTripsFR.length ; i++){
@@ -42,6 +44,8 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsFR[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
+            }else {
+              view.setActiveScreen('notFound')
             }
         }
         })
@@ -77,6 +81,8 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch == dataTourVN[i].nameTour){
                 view.setActiveScreen('innerTourTrips',i)
+            }else {
+              view.setActiveScreen('notFound')
             }
           }
           for ( i = 0 ; i < dataTourFR.length ; i++){
@@ -84,6 +90,8 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch == dataTourFR[i].nameTour){
                 view.setActiveScreen('innerTourTrips',i)
+            }else {
+              view.setActiveScreen('notFound')
             }
           }
         })
@@ -123,6 +131,9 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
           alert('Please access the password reset email')
         })
       })
+      break;
+      case 'notFound':
+      document.getElementById('app').innerHTML = components.notFound
       break;
   }
 

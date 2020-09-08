@@ -801,3 +801,78 @@ components.forgotPassword =
 `;
 
 
+components.notFound =
+`
+<div class="header header-sticky">
+    <div class="container-wrapper">
+        <div class="header-bottom">
+            <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
+                <div class="logo">
+                    <img src="../img/img-hotel/logo.png">
+                </div>
+            </div>
+            <div class="navigation-wrapper">
+            <ul>
+                <li onClick = "router.navigate('/hotel')"><a>Khách sạn</a></li>
+                <li onClick = "router.navigate('/tour')"><a>Tour</a></li>
+                <li><a>Cẩm nang</a></li>
+                <div class="login">
+                    <div class="logo-login icon-secondary">
+                    <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="drop-downs-login">
+                        <ul>
+                            <li id="clickLogin">Login</li>
+                            <li id="clickRegister" onClick="router.navigate('/register')">Register</li>
+                        </ul>
+                    </div>
+                    <span><a  id="itemLogin">Login</a></span>
+                </div>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="login" class="modal">
+<div class="modal-content">
+    <div id="loginModal">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN</h4>              
+            <span id="closeLogin" class="close">x</span>
+        </div>
+        <div class="modal-body">
+            <form  id="login-form">
+                <div class="input-login-wrapper">
+                    <div class="input-wrapper1">
+                        <input type="text" placeholder="Email...." name="email">
+                        <div class="error" id="email-login-error"></div>
+                    </div>
+                    <div class="input-wrapper1">
+                        <input type="password" placeholder="Password...." name="password">
+                        <div class="error" id="password-login-error"></div>
+                    </div>
+                </div>
+                <div class="form-action">
+                <button class="btn1 btn-register" type="submit">
+                    Login
+                </button>
+                </div>
+                <div class="form-action">
+                    <span onClick="router.navigate('/register')" >
+                        Don't have an account? Register
+                    </span>
+                    <span onClick="router.navigate('/forgot')">
+                        Forgot password
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<img src="../img/img-tour/img-innerTour/img-no-data-found.jpg">
+
+`
