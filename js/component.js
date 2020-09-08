@@ -279,7 +279,7 @@ components.detailHotel = `
 <div class="header header-sticky">
     <div class="container-wrapper">
         <div class="header-bottom">
-            <div onClick = "router.navigate('/hotel')" class="logo-container cursor">
+            <div onClick = "router.navigate('#')" class="logo-container cursor">
                 <div class="logo">
                     <img src="../img/img-hotel/logo.png">
                 </div>
