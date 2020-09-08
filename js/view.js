@@ -461,27 +461,13 @@ view.showDetailHotels = () => {
 view.showTourTripsVN = (dataTourVN, dataTourFR) => {
   const NameTourVN = document.getElementById("list-tour-available-show");
   for (let i = 0; i < dataTourVN.length; i++) {
-
-    const nameTourContent = document.getElementById("name-tour");
-
-
-    const tourShowWrapper = document.createElement('div');
-    tourShowWrapper.classList.add("tour-available");
-    if (dataTourVN[i].title == undefined) {
-      tourShowWrapper.innerHTML = `
-        <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
-        src="../img/img-tour/img-innerTour/img-no-data-found.jpg" alt="${dataTourVN[i].alt}">
-        `;
-      document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
-    }
     if (dataTourVN[i].nameTour === model.tourInfoName) {
+      const nameTourContent = document.getElementById("name-tour");
       nameTourContent.innerText = `Tour đi ${dataTourVN[i].nameTour}`;
-      document.getElementsByClassName("tour-available")[i].style.display = 'block';
-    }
-    else {
+      const tourShowWrapper = document.createElement('div');
+      tourShowWrapper.classList.add("tour-available");
       tourShowWrapper.innerHTML = `
            <div class="tour-wrapper">
-             <a class = "" href=""></a>
               <h3>${dataTourVN[i].title}</h3>
               <img class = "cursor" style="width: 250px; float: left; border-radius: 10px; margin-right: 10px;"
                   src="${dataTourVN[i].scr}" alt="${dataTourVN[i].alt}">
@@ -496,8 +482,6 @@ view.showTourTripsVN = (dataTourVN, dataTourFR) => {
       `;
       document.getElementById("list-tour-available-show").appendChild(tourShowWrapper);
     }
-
-
   }
 }
 
