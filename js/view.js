@@ -50,7 +50,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
         }
         })
       break;
-
+        // xoá luôn
     // Inner Hotel Page
     case 'innerHotelPage':
       document.getElementById('app').innerHTML = components.innerHotel;
