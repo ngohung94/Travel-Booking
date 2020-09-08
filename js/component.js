@@ -798,7 +798,6 @@ components.forgotPassword =
     </form>
 </div>
 
-`
-
+`;
 
 
