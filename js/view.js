@@ -21,32 +21,33 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       //   return item;
       //   }
       let searchHotel = document.querySelector('.form-wrapper')
-        searchHotel.addEventListener('submit', (e) => {
-          e.preventDefault()
-          const dataSearch = {
-            place : searchHotel.place.value,
-            departureDate : searchHotel.departureDate.value,
-            returnDate : searchHotel.returnDate.value,
-            roomNumber : searchHotel.roomNumber.value
-          }
-          console.log(dataSearch);
-          for ( i = 0 ; i < dataTripsVN.length ; i++){
-            // removeVietnameseTones(dataTripsVN[i].tileTrip)
-            // removeVietnameseTones(dataSearch)
-            if (dataSearch.place == dataTripsVN[i].titleTrip){
-                view.setActiveScreen('innerHotelPage',i)
-            }
-          }
-          for ( i = 0 ; i < dataTripsFR.length ; i++){
-            // removeVietnameseTones(dataTripsFR[i].tileTrip)
-            // removeVietnameseTones(dataSearch)
-            if (dataSearch.place == dataTripsFR[i].titleTrip){
-                view.setActiveScreen('innerHotelPage',i)
-            }
+      searchHotel.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const dataSearch = {
+          place: searchHotel.place.value.trim(),
+          departureDate: searchHotel.departureDate.value,
+          returnDate: searchHotel.returnDate.value,
+          roomNumber: searchHotel.roomNumber.value
         }
-        })
+        console.log(dataSearch);
+        for (i = 0; i < dataTripsVN.length; i++) {
+          // removeVietnameseTones(dataTripsVN[i].tileTrip)
+          // removeVietnameseTones(dataSearch)
+          if (dataSearch.place == dataTripsVN[i].titleTrip ) {
+            view.setActiveScreen('innerHotelPage', i)
+          }
+         
+        }
+        for (i = 0; i < dataTripsFR.length; i++) {
+          // removeVietnameseTones(dataTripsFR[i].tileTrip)
+          // removeVietnameseTones(dataSearch)
+          if (dataSearch.place == dataTripsFR[i].titleTrip) {
+            view.setActiveScreen('innerHotelPage', i)
+          }
+        }
+      })
       break;
-        // xoá luôn
+    // xoá luôn
     // Inner Hotel Page
     case 'innerHotelPage':
       document.getElementById('app').innerHTML = components.innerHotel;
@@ -69,24 +70,24 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
       view.showTourVN(dataTripsVN);
       view.showTourFR(dataTripsFR);
       let searchTour = document.querySelector('#tour-search')
-        searchTour.addEventListener('submit', (e) => {
-          e.preventDefault()
-          const dataSearch =  searchTour.place.value
-          for ( i = 0 ; i < dataTourVN.length ; i++){
-            // removeVietnameseTones(dataTourVN[i].tileTrip)
-            // removeVietnameseTones(dataSearch)
-            if (dataSearch == dataTourVN[i].nameTour){
-                view.setActiveScreen('innerTourTrips',i);
-            }
+      searchTour.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const dataSearch = searchTour.place.value
+        for (i = 0; i < dataTourVN.length; i++) {
+          // removeVietnameseTones(dataTourVN[i].tileTrip)
+          // removeVietnameseTones(dataSearch)
+          if (dataSearch == dataTourVN[i].nameTour) {
+            view.setActiveScreen('innerTourTrips', i);
           }
-          for ( i = 0 ; i < dataTourFR.length ; i++){
-            // removeVietnameseTones(dataTourFR[i].tileTrip)
-            // removeVietnameseTones(dataSearch)
-            if (dataSearch == dataTourFR[i].nameTour){
-                view.setActiveScreen('innerTourTrips',i)
-            }   
+        }
+        for (i = 0; i < dataTourFR.length; i++) {
+          // removeVietnameseTones(dataTourFR[i].tileTrip)
+          // removeVietnameseTones(dataSearch)
+          if (dataSearch == dataTourFR[i].nameTour) {
+            view.setActiveScreen('innerTourTrips', i)
           }
-        })
+        }
+      })
       break;
     case 'innerTourTrips':
       document.getElementById('app').innerHTML = components.innerTourTrips;
@@ -124,7 +125,7 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
         })
       })
       break;
-      case 'notFound':
+    case 'notFound':
       document.getElementById('app').innerHTML = components.notFound
       break;
   }
