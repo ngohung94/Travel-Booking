@@ -786,7 +786,7 @@ components.forgotPassword =
                 </div>
                 <div>
                     <input class="send-email" name="email" type="text">
-                    <span class="error" id="forgot-email-login-error"></span>
+                    <span class="error" id="forgot-email-error"></span>
                 </div>
                 <p class="">
                     Để đặt lại mật khẩu của mình, hãy nhập địa chỉ email mà bạn sử dụng để đăng nhập
