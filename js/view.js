@@ -35,12 +35,14 @@ view.setActiveScreen = (screenName, idHotel, idDetailHotel) => {
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsVN[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
+            }
           }
           for ( i = 0 ; i < dataTripsFR.length ; i++){
             // removeVietnameseTones(dataTripsFR[i].tileTrip)
             // removeVietnameseTones(dataSearch)
             if (dataSearch.place == dataTripsFR[i].titleTrip){
                 view.setActiveScreen('innerHotelPage',i)
+            }
         }
         })
       break;
